@@ -1,0 +1,109 @@
+<!-- pages/administrator/club_manage/club_check/club_check.wxml -->
+<view class="page">
+    <view class="clubnameContainer">
+        <view class="clubname">社团工作者</view>
+        <navigator url="/pages/set/set?role=union" hover-class="none" open-type="navigate">
+            <image src="/icons/set.png" />
+        </navigator>
+    </view>
+    <van-tabs active="{{ active }}" color="#ffd73b" bind:change="onChange">
+        <van-tab title="审核社团">
+            <van-tabs active="{{ active }}" color="#333333" bind:change="onChange">
+                <van-tab title="待审核">
+                    <view class="checkContainer">
+                        <scroll-view class="scroll-view" scroll-y style="height:{{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore" wx:if="{{activities.undetermined.length!=0}}">
+                            <navigator url="../clubcheck/clubcheck?state=1&clubid={{item.clubID}}" class="checkitem" hover-class="none" wx:for="{{undetermined}}" wx:key="undetermined">
+                                <view class="title">
+                                    <text>{{item.name}}</text>
+                                    <image src="/icons/more-black-right.png" />
+                                </view>
+                                <view class="info">指导老师：{{item.teacher}}</view>
+                                <view class="info">
+                                    <text>指导单位：{{item.guide}}</text>
+                                    <text>{{item.people}}人</text>
+                                </view>
+                            </navigator>
+                            <view class="nodataContainer" wx:if="{{undetermined.length==0}}">
+                                <image src="/img/nodata.png" mode="widthFix" />
+                                <view class="nodatatip">暂无数据</view>
+                            </view>
+                        </scroll-view>
+                    </view>
+                </van-tab>
+                <van-tab title="未通过">
+                    <view class="checkContainer">
+                        <scroll-view scroll-y style="height:{{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore" wx:if="{{activities.undetermined.length!=0}}">
+                            <navigator url="../clubcheck/clubcheck?state=0&clubid={{item.clubID}}" class="checkitem" hover-class="none" wx:for="{{unapprove}}" wx:key="unapprove">
+                                <view class="title">
+                                    <text>{{item.name}}</text>
+                                    <image src="/icons/more-black-right.png" />
+                                </view>
+                                <view class="info">指导老师：{{item.teacher}}</view>
+                                <view class="info">
+                                    <text>指导单位：{{item.guide}}</text>
+                                    <text>{{item.people}}人</text>
+                                </view>
+                            </navigator>
+                            <view class="nodataContainer" wx:if="{{unapprove.length==0}}">
+                                <image src="/img/nodata.png" mode="widthFix" />
+                                <view class="nodatatip">暂无数据</view>
+                            </view>
+                        </scroll-view>
+                    </view>
+                </van-tab>
+            </van-tabs>
+        </van-tab>
+        <van-tab title="管制社团">
+            <view class="adminContainer">
+                <navigator class="searchContainer" url="../searchclub/searchclub?type=stop" hover-class="none" open-type="navigate">
+                    <view class="searchInput">请输入社团名称</view>
+                    <view class="searchicon">
+                        <image src="/icons/sousuo-grey.png" />
+                    </view>
+                </navigator>
+                <view class="adminTitle">已暂停招新的社团</view>
+                <view class="stopClubContainer">
+                    <view class="clubItem" wx:for="{{stopclubs}}" wx:key="stopclubs">
+                        <view>
+                            <van-image round width="75rpx" height="75rpx" src="{{item.logo}}" fit="cover" />
+                            <view class="clubname">{{item.club}}</view>
+                        </view>
+                        <switch bindchange="openclub" class="clubswitch" color="#ffd73b" checked="{{item.checked}}" data-clubid="{{item.clubID}}" data-index="{{index}}" />
+                    </view>
+                     <view class="nodataContainer" wx:if="{{stopclubs.length==0}}">
+          <image src="/img/nodata.png" mode="widthFix"/>
+          <view class="nodatatip">暂无数据</view>
+        </view>
+                </view>
+            </view>
+        </van-tab>
+        <van-tab title="定期开放">
+            <view class="openPageContainer">
+            <view bind:tap="onDisplay" class="chooesDateContainer">
+                <view class="chooesDatetitle">
+                    <view>开放新学年社团修改信息/注册</view>
+                    <image src="/icons/more-black-right.png" />
+                </view>
+                <view class="date">{{modifyAndRegister.start==''?'选择日期区间':modifyAndRegister.start+'至'+modifyAndRegister.end}}</view>
+                <view class="tip">
+                    *此日期区间内才允许社团修改信息、注册账号及社联审核社团，日期仅限当前学年内
+                </view>
+            </view>
+            <view bind:tap="onDisplayChoose" class="chooesDateContainer">
+                <view class="chooesDatetitle">
+                    <view>开放会员反选日期</view>
+                    <image src="/icons/more-black-right.png" />
+                </view>
+                <view class="date">{{choose.start==''?'选择日期区间':choose.start+'至'+choose.end}}</view>
+            </view>
+            <view class="switchContainer">
+                <text>开放社团招新</text>
+                <switch bindchange="recruitClubs" class="clubswitch" color="#ffd73b" checked="{{recruit}}" />
+            </view>
+            </view>
+            <van-calendar class="calendar" show="{{ showcalendarChoose }}" type="range" bind:close="onCloseChoose" bind:confirm="onConfirmChoose" color="#ffd73b" />
+
+            <van-calendar class="calendar" show="{{ showcalendar }}" type="range" bind:close="onClose" bind:confirm="onConfirm" color="#ffd73b" />
+        </van-tab>
+    </van-tabs>
+</view>

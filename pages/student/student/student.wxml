@@ -1,0 +1,34 @@
+<index wx:if="{{active==0}}"></index>
+<mine wx:if="{{active==1}}"></mine>
+<van-tabbar active-color="#333333" inactive-color="#333333" active="{{ active }}" bind:change="onChange"  safe-area-inset-bottom border="false">
+  <van-tabbar-item>
+    <image
+      slot="icon"
+      src="/icons/shouye.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 50rpx;"
+    />
+    <image
+      slot="icon-active"
+      src="/icons/shouye-yellow.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 50rpx;"
+    />
+    主页
+    </van-tabbar-item>
+  <van-tabbar-item>
+    <image
+      slot="icon"
+      src="/icons/wode.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 50rpx;"
+    />
+    <image
+      slot="icon-active"
+      src="/icons/wode-yellow.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 50rpx;"
+    />
+    我的
+    </van-tabbar-item>
+</van-tabbar>

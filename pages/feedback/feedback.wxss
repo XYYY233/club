@@ -1,0 +1,99 @@
+/* pages/feedback/feedback.wxss */
+.title{
+    font-size: 32rpx;
+    color: #cccccc;
+    width: 90%;
+    margin: 30rpx auto;
+}
+.textarea{
+    width: 85%;
+    background-color: #fafafd;
+    border: 1rpx solid #cccccc;
+    border-radius: 10rpx;
+    min-height: 300rpx;
+    padding: 20rpx 20rpx;
+    /* width: 100%; */
+
+    margin: 0 auto;
+    overflow-wrap: break-word;
+}
+.titleContainer{
+    display: flex;
+    width: 85%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20rpx auto;
+}
+.titleContainer>title{
+    width: 35%;
+    overflow-wrap: break-word;
+    /* padding-right: 30rpx; */
+}
+
+.titleContainer>button{
+    width: 300rpx;
+    height: 70rpx;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    background-color: #ffd73b;
+    color: #333333;
+    text-align: center;
+    line-height: 70rpx;
+    border: none;
+}
+.phoneInfo{
+    width: 85%;
+    background-color: #fafafd;
+    border: 1rpx solid #cccccc;
+    border-radius: 10rpx;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    padding: 20rpx ;
+}
+.btcontainer{
+    width: 100%;
+    margin-top: 10rpx;
+}
+button::after{
+    border: none;
+ }
+.loginbt{
+    width: 80%;
+    height: 100rpx;
+    border-radius: 10rpx;
+    font-size: 35rpx;
+    background-color: #ffd73b;
+    color: #333333;
+    text-align: center;
+    line-height: 100rpx;
+    border: none;
+}
+.bthover{
+    background-color: #E5C136;
+    
+}
+.btdisabled{
+    width: 80%;
+    height: 100rpx;
+    border-radius: 10rpx;
+    font-size: 35rpx;
+    background-color: #efefef;
+    color: #cccccc;
+    text-align: center;
+    line-height: 100rpx;
+    border: none;
+}
+/* 版权声明 */
+.copyright{
+    width: 100%;
+    text-align: center;
+    margin-top: 130rpx;
+    /* position: absolute; */
+    padding-bottom: 30rpx;
+  }
+  .copyright>view{
+    color: #dbdbdb;
+    font-size: 24rpx;
+  }
+  
+  

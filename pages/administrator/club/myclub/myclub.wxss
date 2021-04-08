@@ -1,0 +1,350 @@
+/* pages/administrator/club/myclub/myclub.wxss */
+.page{
+    padding-bottom: 50rpx;
+}
+.clubnameContainer{
+    width: 90%;
+    margin: 0 auto;
+    padding: 20rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.clubnameContainer image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.clubname{
+    color: #333333;
+    font-size: 34rpx;
+    margin-left: 20rpx;
+}
+/* 我的会员 */
+.memberContainer{
+    min-height: 800rpx;
+}
+.searchContainer{
+    width: 85%;
+    background-color: #fafafd;
+    margin: 20rpx auto;
+    display:flex;
+    padding: 20rpx 20rpx;
+    border-radius: 10rpx;
+}
+.searchicon{
+    width: 50rpx;
+    height: 50rpx;
+}
+.searchicon>image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.searchInput{
+    width: 90%;
+    font-size: 30rpx;
+    line-height: 31rpx;
+}
+
+/* 手风琴 */
+.collapse{ 
+    width: 90%;
+    margin: 10rpx auto;
+
+}
+.collapse-item{
+    margin: 25rpx 0;
+    box-shadow:1px 1px 5px 1px rgba(159,188,217,0.22);
+    border-radius: 15rpx;
+}
+.collapse-item view{
+    font-size: 32rpx;
+}
+.infoitem{
+    font-size: 30rpx !important;
+    display: flex;
+    color: #cccccc;
+    margin: 10rpx;
+}
+.infoitem .contnet{
+    color: #333333;
+    /* margin-left: 30rpx; */
+}
+.title{
+    width: 30%;
+}
+.contnet{
+    width: 70%;
+    word-break:break-all;
+}
+
+/* 暂无数据 */
+.nodataContainer{
+    width: 100%;
+    margin-top: 140rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.nodataContainer image{
+    width: 85%;
+}
+.nodatatip{
+    color: #cccccc;
+    font-size: 34rpx;
+    margin: 20rpx 0;
+}
+/* 版权声明 */
+.copyright{
+    padding: 30rpx 0;
+    width: 100%;
+    text-align: center;
+}
+  .copyright>view{
+    color: #dbdbdb;
+    font-size: 24rpx;
+  }
+  
+  
+  /* 社团信息 */
+.clubinfoContainer{
+    /* position: relative; */
+    width: 90%;
+    margin: 0 auto;
+}
+.clubinfotitle{
+    font-size: 34rpx;
+    color: #333333;
+    margin-top: 10rpx;
+    /* padding-bottom: 60rpx; */
+}
+/* logo */
+.logoItemContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20rpx 0;
+}
+.logoContainer{
+    width: 150rpx;
+    height: 150rpx;
+    border: 1rpx #cccccc solid;
+    border-radius: 15rpx;
+    overflow: hidden;
+}
+.noLogo{
+    position: relative;
+}
+.noLogo image{
+    width: 150rpx;
+    height: 150rpx;
+}
+.nologotip{
+    position: absolute;
+    bottom: 12rpx;
+    width: 150rpx;
+    
+    text-align: center;
+    font-size: 25rpx;
+    color: #ffffff;
+    background-color: rgba(105,105,105,0.3);
+}
+.itemtitle{
+    color: #cccccc;
+    font-size: 34rpx;
+    margin: 10rpx 0;
+    /* width: 100%; */
+}
+.itemContainer{
+    margin: 20rpx 0;
+}
+.itemtext{
+    background-color: #fafafd;
+    border: 1rpx solid #cccccc;
+    border-radius: 10rpx;
+    min-height: 65rpx;
+    padding: 20rpx 20rpx;
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+}
+/* 修改状态 */
+.revise{
+    background-color: #ffffff;
+    border: 1rpx solid #cccccc;
+    border-radius: 10rpx;
+    min-height: 65rpx;
+    padding: 20rpx 20rpx;
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+}
+/* == */
+.text{
+    width: 100%;
+    font-size: 32rpx;
+    color: #333333;
+    text-align: start;
+}
+.itemtext>textarea{
+    width: 100%;
+    font-size: 32rpx;
+    height: 90rpx;
+    color: #333333;
+}
+.itemtext>input{
+    width: 100%;
+    font-size: 32rpx;
+    color: #333333;
+    z-index: 0;
+}
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grey{
+    color: #cccccc;
+}
+picker{
+    width: 100%;
+}
+.addicon{
+    width: 32rpx;
+    height: 32rpx;
+    margin: 0 20rpx;
+}
+/* 指导老师 */
+.teacherContainer{
+    margin-top: 40rpx;
+}
+.teachertitleBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65rpx;
+    /* width: 100%; */
+}
+.deletebt{
+    background-color: #FA5151;
+    width: 18%;
+    height: 65rpx;
+    font-size: 30rpx;
+    line-height: 65rpx;
+    color: #ffffff;
+    border: none;
+    margin: 0;
+}
+.deletebthover{
+    background-color: #e14949;
+}
+/* 按钮 */
+.btcontainer{
+    width: 100%;
+    margin: 50rpx 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.bt{
+    background-color: #ffd73b;
+    width: 80%;
+    height: 100rpx;
+    font-size: 34rpx;
+    line-height: 100rpx;
+    color: #333333;
+    border: none;
+}
+.bthover{
+    background-color: #E5C136;
+}
+.bthalf{
+    background-color: #ffd73b;
+    width: 35%;
+    height: 100rpx;
+    font-size: 34rpx;
+    line-height: 100rpx;
+    color: #333333;
+    border: none;
+}
+
+
+/* 圆形按钮 */
+.circlebtContainer{
+    position: relative;
+}
+.circlebt{
+    width: 130rpx;
+    height: 130rpx;
+    background-color: #ffd73b;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10rpx 0;
+
+    -webkit-animation-name: fadeIn; /*动画名称*/
+    -webkit-animation-duration: 0.5s; /*动画持续时间*/
+    -webkit-animation-iteration-count: 1; /*动画次数*/
+    -webkit-animation-delay: 0s; /*延迟时间*/
+
+}
+.bticon{
+    width: 45rpx;
+    height: 45rpx;
+}
+.bttext{
+    font-size: 22rpx;
+}
+
+button::after{
+    border: none;
+}
+ .cancelbt{
+    background-color: #efefef;
+}
+.bthover{
+    background-color: #E5C136;
+}
+.cancelbthover{
+    background-color: #dcdcdc;
+}
+
+
+
+@-webkit-keyframes fadeIn {
+    0% {
+    opacity: 0; /*初始状态 透明度为0*/
+    }
+    50% {
+    opacity: 0; /*中间状态 透明度为0*/
+    }
+    100% {
+    opacity: 1; /*结尾状态 透明度为1*/
+    }
+}
+
+.movable-area{
+    /* pointer-events:none; */
+    width: 100%;
+  }
+  .movable-view{ 
+    pointer-events:auto;
+    width: 130rpx;
+    height: 300rpx;
+    position: fixed;
+    top: 150rpx;
+    left:  calc(100% - 140rpx);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }

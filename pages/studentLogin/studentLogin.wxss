@@ -1,0 +1,126 @@
+/* pages/stuLogin/studentLogin.wxss */
+.container{
+    margin: 200rpx auto;
+    width: 85%;
+}
+.title{
+    font-size: 44rpx;
+    color: #333333;
+    margin-bottom: 120rpx;
+}
+.pickerContainer,.inputContainer{
+    width: 100%;
+    border-bottom: 1rpx solid #cccccc;
+    margin: 50rpx auto;
+    padding: 20rpx 0rpx;
+}
+.inputContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.inputContainer>input{
+    width: 100%;
+    line-height: 50rpx;
+    height: 50rpx;
+    z-index: 1;
+}
+.imgbox{
+    width:7%;
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+}
+.imgbox>image{
+    position: absolute;
+    right: 0;
+    width:60%;
+    z-index: 999;
+}
+.picker{
+    display: flex;
+    align-items: center;
+    height: 50rpx;
+}
+.moreicon{
+    width: 5%;
+}
+.nochoose{
+    color: #cccccc;
+    font-size: 32rpx;
+}
+.textcontainer{
+    color: #333333;
+    font-size: 32rpx;
+    width: 95%;
+}
+.placeholder{
+    color: #cccccc;
+    font-size: 32rpx;
+}
+.btcontainer{
+    width: 100%;
+    margin-top: 150rpx;
+}
+button::after{
+    border: none;
+ }
+.loginbt{
+    width: 80%;
+    height: 100rpx;
+    border-radius: 10rpx;
+    font-size: 35rpx;
+    background-color: #ffd73b;
+    color: #333333;
+    text-align: center;
+    line-height: 100rpx;
+    border: none;
+}
+.btdisabled{
+    width: 80%;
+    height: 100rpx;
+    border-radius: 10rpx;
+    font-size: 35rpx;
+    background-color: #efefef;
+    color: #cccccc;
+    text-align: center;
+    line-height: 100rpx;
+    border: none;
+}
+/* 版权声明 */
+.copyright{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    padding-bottom: 30rpx;
+    bottom: 0;
+  }
+  .copyright>view{
+    color: #dbdbdb;
+    font-size: 24rpx;
+  }
+  
+  /* 密码可见 */
+.eye{
+    width:9%;
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+}
+.eye>image{
+    position: absolute;
+    right: 0;
+    width:60%;
+}
+/* 忘记密码 */
+.forget{
+    text-align: center;
+    font-size: 28rpx;
+    line-height: 35rpx;
+    height: 35rpx;
+    margin: 20rpx 0;
+    color: #333333;
+
+}

@@ -1,0 +1,102 @@
+/* pages/administrator/club_manage/mamberInfo/mamber_info.wxss */
+
+/* 搜索 */
+.searchContainer{
+    width: 85%;
+    background-color: #fafafd;
+    margin: 20rpx auto;
+    display:flex;
+    padding: 20rpx 20rpx;
+    border-radius: 10rpx;
+}
+.searchicon{
+    width: 50rpx;
+    height: 50rpx;
+}
+.searchicon>image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.searchInput{
+    width: 90%;
+    font-size: 30rpx;
+    color:#CDC7D3;
+    display: flex;
+    align-items: center;
+}
+/* 选择学年 */
+.picker{
+    padding: 0 40rpx;
+    margin: 5rpx auto;
+    display: flex;
+    align-items: center;
+}
+.picker image{
+    width: 43rpx;
+    height: 43rpx;
+}
+.picker text{
+    /* margin-left: 30rpx; */
+    font-size: 34rpx;
+}
+/* 审核社团内容 */
+.scrollview{
+    /* padding-bottom: 120rpx; */
+}
+.checkitem{    
+    color: #333333;
+ 
+    margin: 30rpx auto;
+    width: 80%;
+    padding: 30rpx;
+    box-shadow:1px 1px 5px 1px rgba(159,188,217,0.22);
+}
+.checkitem .title text{
+    font-size: 30rpx;
+    color: #333333;
+}
+.checkitem .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title image{
+    width: 32rpx;
+    height: 32rpx;
+}
+.checkitem .info{
+    color: #cccccc;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.clubname{
+    display: flex;
+    align-items: center;
+}
+
+.logout{
+    color: #FA5151;
+    border: #FA5151 1rpx solid;
+    padding: 5rpx 10rpx;
+    border-radius: 5px;
+    margin-left: 30rpx;
+    font-size: 28rpx;
+}
+/* 暂无数据 */
+.nodataContainer{
+    width: 100%;
+    padding-top: 140rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.nodataContainer image{
+    width: 85%;
+}
+.nodatatip{
+    color: #cccccc;
+    font-size: 34rpx;
+    margin: 20rpx 0;
+}

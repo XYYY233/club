@@ -1,0 +1,30 @@
+<!--pages/student/searchclub/searchclub.wxml-->
+<view class="page">
+
+    <view class="searchContainer">
+        <input class="searchInput" bindinput="handleSearchInput" confirm-type="search" placeholder="请输入社团名称" placeholder-style="color:#CDC7D3;font-size:30rpx" />
+        <view class="searchicon" bind:tap="handleSearch">
+            <image src="/icons/sousuo-grey.png" />
+        </view>
+    </view>
+    <view class="dataContainer" wx:if="{{value!=''}}">
+        <navigator hover-class="none" class="clubContainer" url="../club/club?clubid={{item.clubID}}" wx:for="{{clubs}}" wx:key="clubs">
+        <view class="title">
+            <view class="logo">
+                <van-image round fit="cover" width="80rpx" height="80rpx" src="{{item.logo}}"/>
+            </view>
+           
+            <rich-text class="club" nodes="{{item.name}}"></rich-text>
+        </view>
+        <image src="/icons/more-grey-right.png" class="more"/>
+    </navigator>
+    </view>
+    <view class="nodataContainer" wx:if="{{!havesearch}}">
+        <image src="/img/student-sousuo.png" mode="widthFix" />
+        <view class="nodatatip">搜索结果会显示在这里</view>
+    </view>
+    <view class="nodataContainer" wx:if="{{nodata}}">
+        <image src="/img/student-nodata.png" mode="widthFix" />
+        <view class="nodatatip">暂无数据</view>
+    </view>
+</view>

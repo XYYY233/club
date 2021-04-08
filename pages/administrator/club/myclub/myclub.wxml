@@ -1,0 +1,258 @@
+<!-- pages/administrator/club/myclub/myclub.wxml -->
+<view class="page">
+    <view class="clubnameContainer">
+        
+        <view class="clubname">{{club}}</view>
+        <navigator url="/pages/set/set" hover-class="none" open-type="navigate">
+            <image src="/icons/set.png" />
+        </navigator>
+    </view>
+    <van-tabs active="{{ active }}" bind:change="onChangeTabs" swipeable color="#ffd73b" animated>
+        <van-tab title="我的社员">
+            <view class="memberContainer" style="min-height:{{minHeight}}px">
+                <!-- 搜索框 -->
+                <view class="searchContainer">
+                    <input class="searchInput" bindinput="handleSearchInput"  type="text" placeholder="请输入会员姓名" placeholder-style="color:#CDC7D3;font-size:30rpx" />
+                    <view class="searchicon" bind:tap="handleSearch">
+                        <image src="/icons/sousuo-grey.png" />
+                    </view>
+                </view>
+                <view class="member">
+                    <van-collapse custom-class="collapse" value="{{ activeNames }}" bind:change="onChange" accordion wx:if="{{!nomember}}">
+                        <van-collapse-item custom-class="collapse-item" title="{{item.duty}} {{item.name}}" name="{{memberindex+''}}" wx:for="{{members}}" wx:for-index="memberindex" wx:key="member">
+                            <view class="memberinfoContainer">
+                                <view class="infoitem">
+                                    <view class="title">姓名</view>
+                                    <!-- <view class="contnet">{{item.name}}</view> -->
+                                    <rich-text class="contnet" nodes="{{item.name}}"></rich-text>
+                                </view>
+                                <view class="infoitem">
+                                    <view class="title">性别</view>
+                                    <!-- <view class="contnet">{{item.sex}}</view> -->
+                                    <rich-text class="contnet" nodes="{{item.sex}}"></rich-text>
+                                </view>
+                                <view class="infoitem">
+                                    <view class="title">学院</view>
+                                    <!-- <view class="contnet">{{item.college}}</view> -->
+                                    <rich-text class="contnet" nodes="{{item.college}}"></rich-text>
+                                </view>
+                                <view class="infoitem">
+                                    <view class="title">班级</view>
+                                    <!-- <view class="contnet">{{item.classes}}</view> -->
+                                    <rich-text class="contnet" nodes="{{item.classes}}"></rich-text>
+                                </view>
+                                <view class="infoitem">
+                                    <view class="title">学号</view>
+                                    <!-- <view class="contnet">{{item.studentNumber}}</view> -->
+                                    <rich-text class="contnet" nodes="{{item.studentNumber}}"></rich-text>
+                                </view>
+                                <view class="infoitem">
+                                    <view class="title">所在校区</view>
+                                    <!-- <view class="contnet">{{item.campus}}</view> -->
+                                    <rich-text class="contnet" nodes="{{item.campus}}"></rich-text>
+                                </view>
+                                <view class="infoitem">
+                                    <view class="title">政治面貌</view>
+                                    <!-- <view class="contnet">{{item.politics}}</view> -->
+                                    <rich-text class="contnet" nodes="{{item.politics}}"></rich-text>
+                                </view>
+                                <view class="infoitem">
+                                    <view class="title">联系方式</view>
+                                    <!-- <view class="contnet">{{item.phone}}</view> -->
+                                    <rich-text class="contnet" nodes="{{item.phone}}"></rich-text>
+                                </view>
+                                <view class="infoitem">
+                                    <view class="title">备注</view>
+                                    <!-- <view class="contnet">{{item.remark}}</view> -->
+                                    <rich-text class="contnet" nodes="{{item.remark}}"></rich-text>
+                                </view>
+                            </view>
+                        </van-collapse-item>
+                    </van-collapse>
+                    <view class="nodataContainer" wx:if="{{nomember}}">
+                        <image src="/img/nodata.png" mode="widthFix" />
+                        <view class="nodatatip">暂无数据</view>
+                    </view>
+                </view>
+            </view>
+            <view class="copyright">
+                <view>Copyright©2021 All rights reserved by Quanta Center</view>
+            </view>
+        </van-tab>
+        <van-tab title="社团信息">
+            <view class="clubinfoContainer">
+                <movable-area class="movable-area" style="height:{{movableHeight}}px">
+                    <view class="clubinfotitle">社团基本信息</view>
+                    <view class="logoItemContainer">
+                        <view class="itemtitle">社团logo</view>
+                        <view class="logoContainer" bind:tap="chooseImg">
+                            <view class="noLogo">
+                                <image src="{{clubInfo.logo==''?'/icons/pic.png':clubInfo.logo}}" />
+                                <view class="nologotip" wx:if="{{!reviseStatus}}">上传图片</view>
+                            </view>
+                        </view>
+                    </view>
+                    <form class="from" catchsubmit="formSubmit">
+                        <view class="clubinfoItem">
+                            <view class="itemContainer">
+                                <view class="itemtitle">社团名称</view>
+                                <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                    <input type="text" placeholder="请输入社团名称" disabled="{{reviseStatus}}" value="{{clubInfo.club}}" name="club" />
+                                </view>
+                            </view>
+                            <view class="itemContainer">
+                                <view class="itemtitle">社团类别</view>
+                                <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                    <picker bindchange="bindPickerChange" value="{{clubInfo.clubType}}" range="{{clubTypeArray}}" data-item="clubType" data-content="clubType" disabled="{{reviseStatus}}" name="clubType">
+                                        <view class="picker">
+                                            <text class="text">{{clubTypeView}}</text>
+                                        </view>
+                                    </picker>
+                                </view>
+                            </view>
+                            <view class="itemContainer">
+                                <view class="itemtitle">活动校区</view>
+                                <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                    <picker bindchange="bindPickerChange" value="{{clubInfo.campus}}" range="{{campusArray}}" data-item="campus" data-content="campus" disabled="{{reviseStatus}}" name="campus">
+                                        <view class="picker">
+                                            <text class="text">{{clubInfo.campus}}</text>
+                                        </view>
+                                    </picker>
+                                </view>
+                            </view>
+                            <view class="itemContainer">
+                                <view class="itemtitle">指导单位</view>
+                                <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                    <picker bindchange="bindPickerChange" value="{{clubInfo.guide}}" range="{{guideArray}}" data-item="guide" data-content="guide" disabled="{{reviseStatus}}" name="guide">
+                                        <view class="picker">
+                                            <text class="text">{{clubInfo.guide}}</text>
+                                        </view>
+                                    </picker>
+                                </view>
+                            </view>
+                            <view class="itemContainer">
+                                <view class="itemtitle">管理层人数</view>
+                                <view class="itemtext">
+                                    <input type="text" placeholder="请输入管理层人数" disabled="{{true}}" value="{{clubInfo.adminNumber}}" />
+                                </view>
+                            </view>
+                            <view class="itemContainer">
+                                <view class="itemtitle">社员人数</view>
+                                <view class="itemtext">
+                                    <input type="text" placeholder="请输入社员人数" disabled="{{true}}" value="{{clubInfo.memberNumber}}"/>
+                                </view>
+                            </view>
+                            <!-- 指导老师 -->
+                            <view class="teacherContainer" wx:for="{{clubInfo.teachers}}" wx:key="teacherindex" wx:for-index="teacherindex">
+                                <view class="teachertitleBox">
+                                    <view class="clubinfotitle">指导老师信息（{{teacherindex+1}}）</view>
+                                    <button class="deletebt" hover-class="deletebthover" bind:tap="deleteTeacher" data-index="{{teacherindex}}" wx:if="{{!reviseStatus}}">
+                                        删除
+                                    </button>
+                                </view>
+                                <view class="itemContainer">
+                                    <view class="itemtitle">姓名</view>
+                                    <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                        <input type="text" placeholder="请输入指导老师姓名" disabled="{{reviseStatus}}" value="{{item.name}}" name="teachers[{{teacherindex}}].name" />
+                                    </view>
+                                </view>
+                                <view class="itemContainer">
+                                    <view class="itemtitle">所在学院</view>
+                                    <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                        <picker bindchange="bindPickerChange" value="{{college}}" range="{{teacherCollegeArray}}" data-item="teacherCollege" data-content="teachers[{{teacherindex}}].college" disabled="{{reviseStatus}}" >
+                                            <view class="picker">
+                                                <text class="text {{item.college==''?'grey':''}}">{{item.college==''?'请选择学院':item.college}}</text>
+                                            </view>
+                                        </picker>
+                                    </view>
+                                </view>
+                                <view class="itemContainer">
+                                    <view class="itemtitle">工号</view>
+                                    <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                        <input type="text" placeholder="请输入工号" disabled="{{reviseStatus}}" value="{{item.jobNumber}}" name="teachers[{{teacherindex}}].jobNumber" />
+                                    </view>
+                                </view>
+                                <view class="itemContainer">
+                                    <view class="itemtitle">联系方式</view>
+                                    <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                        <input type="text" placeholder="请输入联系方式" disabled="{{reviseStatus}}" value="{{item.phone}}" name="teachers[{{teacherindex}}].phone" />
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="btcontainer" wx:if="{{!reviseStatus}}">
+                                <button class="bt" hover-class="bthover" bind:tap="addteacher">
+                                    <image class="addicon" src="/icons/jia.png" />
+                                    添加指导老师
+                                </button>
+                            </view>
+                            <view class="clubinfotitle">社团负责人信息</view>
+                            <view class="itemContainer">
+                                <view class="itemtitle">姓名</view>
+                                <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                    <input type="text" placeholder="请输入负责人学号" disabled="{{reviseStatus}}" value="{{clubInfo.studentName}}" name="studentName"/>
+                                </view>
+                            </view>
+                            <view class="itemContainer">
+                                <view class="itemtitle">所在学院</view>
+                                <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                    <picker bindchange="bindPickerChange" value="{{clubInfo.studentCollege}}" range="{{collegeArray}}" data-item="college" data-content="studentCollege" disabled="{{reviseStatus}}">
+                                        <view class="picker">
+                                            <text class="text {{clubInfo.studentCollege==''?'grey':''}}">{{clubInfo.studentCollege==''?'请选择学院':clubInfo.studentCollege}}</text>
+                                        </view>
+                                    </picker>
+                                </view>
+                            </view>
+                            <view class="itemContainer">
+                                <view class="itemtitle">学号</view>
+                                <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                    <input type="text" placeholder="请输入负责人学号" disabled="{{reviseStatus}}" value="{{clubInfo.studentNumber}}" name="studentNumber"/>
+                                </view>
+                            </view>
+                            <view class="itemContainer">
+                                <view class="itemtitle">政治面貌</view>
+                                <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                    <picker bindchange="bindPickerChange" value="{{clubInfo.studentCollege}}" range="{{politicsArray}}" data-item="politics" data-content="studentPolitics" disabled="{{reviseStatus}}">
+                                        <view class="picker">
+                                            <text class="text {{cclubInfo.studentPolitics==''?'grey':''}}">{{clubInfo.studentPolitics==''?'请选择政治面貌':clubInfo.studentPolitics}}</text>
+                                        </view>
+                                    </picker>
+                                    <!-- <input type="text" placeholder="请输入负责人政治面貌" disabled="{{reviseStatus}}" value="{{clubInfo.studentPolitics}}" name="studentPolitics"/> -->
+                                </view>
+                            </view>
+                            <view class="itemContainer">
+                                <view class="itemtitle">联系方式</view>
+                                <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                    <input type="text" placeholder="请输入负责人联系方式" disabled="{{reviseStatus}}" value="{{clubInfo.studentPhone}}" name="studentPhone"/>
+                                </view>
+                            </view>
+                            <view class="itemContainer">
+                                <view class="itemtitle">辅导员</view>
+                                <view class="itemtext {{reviseStatus?'':'revise'}}">
+                                    <input type="text" placeholder="请输入辅导员姓名" disabled="{{reviseStatus}}" value="{{clubInfo.counselor}}" name="counselor"/>
+                                </view>
+                            </view>
+                        </view>
+                        <movable-view class="movable-view" direction="vertical" wx:if="{{active==1}}">
+                            <view class="circlebtContainer">
+                                <button class="circlebt" hover-class="bthover" bind:tap="changeStatus" wx:if="{{reviseStatus}}" disabled="{{!open}}">
+                                    <image src="/icons/xiugai.png" class="bticon" wx:if="{{open}}"/>
+                                    <view class="bttext" wx:if="{{open}}">修改</view>
+                                    <image src="/icons/shijian.png" class="bticon" wx:if="{{!open}}"/>
+                                    <view class="bttext" wx:if="{{!open}}">未开放</view>
+                                </button>
+                                <button class="circlebt cancelbt" hover-class="cancelbthover" bind:tap="cancelRevise" wx:if="{{!reviseStatus}}">
+                                    <image src="/icons/quxiao.png" class="bticon" />
+                                    <view class="bttext">取消</view>
+                                </button>
+                                <button form-type="submit" class="circlebt" hover-class="bthover" wx:if="{{!reviseStatus}}">
+                                    <image src="/icons/wancheng.png" class="bticon" />
+                                    <view class="bttext">完成</view>
+                                </button>
+                            </view>
+                        </movable-view>
+                    </form>
+                </movable-area>
+            </view>
+        </van-tab>
+    </van-tabs>
+</view>

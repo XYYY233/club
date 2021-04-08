@@ -1,0 +1,35 @@
+<!--pages/administrator/guide_teacher/guide_teacher/guide_teacher.wxml-->
+<activity_check wx:if="{{active==0}}"></activity_check>
+<mine wx:if="{{active==1}}"></mine>
+<van-tabbar active-color="#333333" inactive-color="#333333" active="{{ active }}" bind:change="onChange"  safe-area-inset-bottom border="false">
+  <van-tabbar-item>
+    <image
+      slot="icon"
+      src="/icons/shenpi.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 50rpx;"
+    />
+    <image
+      slot="icon-active"
+      src="/icons/shenpi-yellow.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 50rpx;"
+    />
+    活动审批
+    </van-tabbar-item>
+  <van-tabbar-item>
+    <image
+      slot="icon"
+      src="/icons/wode.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 50rpx;"
+    />
+    <image
+      slot="icon-active"
+      src="/icons/wode-yellow.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 50rpx;"
+    />
+    我的信息
+    </van-tabbar-item>
+</van-tabbar>

@@ -1,0 +1,32 @@
+/* pages/student/clublist/clublist.wxss */
+.listitem{
+    height: 100rpx;
+    width: 90%;
+    border: 2rpx black solid;
+    margin: 10rpx auto;
+    margin-bottom: 20rpx;
+    
+}
+.clubContainer{
+    width: 85%;
+    padding: 20rpx;
+    box-shadow:1px 1px 5px 1px rgba(159,188,217,0.22);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10rpx;
+    margin: 30rpx auto;
+}
+.title{
+    display: flex;
+    align-items: center;
+}
+.club{
+    margin-left: 20rpx;
+    font-size: 32rpx;
+    color: #333333;
+}
+.more{
+    width: 35rpx;
+    height: 35rpx;
+}

@@ -1,0 +1,103 @@
+/* pages/student/index/index.wxss */
+.page {
+    padding-bottom: 120rpx;
+}
+
+/* 搜索 */
+.searchContainer {
+    width: 85%;
+    background-color: #fafafd;
+    margin: 20rpx auto;
+    display: flex;
+    padding: 20rpx 20rpx;
+    border-radius: 10rpx;
+}
+
+.searchicon {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.searchicon>image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.searchInput {
+    width: 90%;
+    font-size: 30rpx;
+    color: #CDC7D3;
+    display: flex;
+    align-items: center;
+}
+
+/* 社团 */
+.clubContainer {
+    width: 90%;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px 1px rgba(159, 188, 217, 0.22);
+    margin: 30rpx auto;
+    border-radius: 10rpx;
+
+}
+
+.img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 30rpx;
+    position: relative;
+}
+
+.arrow {
+    width: 0rpx;
+    height: 0rpx;
+    border-bottom: 20rpx solid #ffffff;
+    border-left: 20rpx solid transparent;
+    border-right: 20rpx solid transparent;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+}
+
+.img>image {
+    height: 220rpx;
+
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx 20rpx;
+    align-items: center;
+}
+
+.title {
+    color: #333333;
+    font-size: 32rpx;
+}
+
+.tip {
+    color: #333333;
+    font-size: 28rpx;
+}
+
+.bt {
+    color: #333333;
+    border: 1rpx #333333 solid;
+    padding: 5rpx 25rpx;
+    border-radius: 30rpx;
+    font-size: 28rpx;
+}
+
+/* 版权声明 */
+.copyright {
+    padding: 30rpx 0;
+    width: 100%;
+    text-align: center;
+}
+
+.copyright>view {
+    color: #dbdbdb;
+    font-size: 24rpx;
+}

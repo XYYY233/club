@@ -1,0 +1,25 @@
+<!-- pages/student/result/result.wxml -->
+<view class="page">
+    <view class="itemContainer">
+        <view class="titleContainer">
+            <van-image src="{{logo}}" width="100rpx" height="100rpx" round />
+            <view class="clubName">
+                <view class="name">{{club}}</view>
+                <view class="department">{{department}}</view>
+            </view>
+        </view>
+        <view class="roundContainer">
+            <view class="Line"></view>
+            <view class="round">{{round}}</view>
+            <view class="Line"></view>
+        </view>
+        <view class="textContain">
+            <view>
+                <text user-select="true" class="text">{{content}}</text>
+            </view>
+            <view>
+                <text user-select="true" class="text">{{personal}}</text>
+            </view>
+        </view>
+    </view>
+</view>

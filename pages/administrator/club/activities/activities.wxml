@@ -1,0 +1,80 @@
+<!-- pages/administrator/club/activities/activities.wxml -->
+<van-tabs active="{{ active }}" swipeable color="#ffd73b" animated>
+  <van-tab title="待审核">
+    <view class="container">
+      <scroll-view scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore" >
+        <navigator url="../progress/progress?state={{item.state}}&activityID={{item.activityID}}" hover-class="none" wx:for="{{activities.undetermined}}" wx:key="undetermined"wx:if="{{activities.undetermined.length!=0}}">
+          <view class="listitem">
+            <!-- <view class="titleContainer">
+              <image src="/icons/chengyuan1.png" class="icons"/>
+              <view class="title">{{item.club}}</view>
+              
+            </view> -->
+            <view class="titleContainer">
+              <image src="/icons/zonglan.png" class="titleicons"/>
+              <view class="title">{{item.title}}</view>
+            </view>
+            <view class="detail">
+              <text class="time">{{item.time}}</text>
+              <text class="site">{{item.site}}</text>
+              <text class="number">{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{activities.undetermined.length==0&&complete}}">
+          <image src="/img/nodata.png" mode="widthFix"/>
+          <view class="nodatatip">暂无数据</view>
+        </view>
+   
+      </scroll-view>
+       </view>
+  </van-tab>
+  <van-tab title="已通过">
+    <view class="container">
+      <scroll-view scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore">
+      <navigator target="" url="../progress/progress?state={{item.state}}&activityID={{item.activityID}}" hover-class="none" wx:for="{{activities.approve}}" wx:key="approve" wx:if="{{activities.approve.length!=0}}">
+        <view class="listitem">
+            <view class="titleContainer">
+              <image src="/icons/zonglan.png" class="titleicons"/>
+              <view class="title">{{item.title}}</view>
+            </view>
+          <view class="detail">
+            <text class="time">{{item.time}}</text>
+            <text class="site">{{item.site}}</text>
+            <text class="number">{{item.people}}人</text>
+          </view>
+        </view>
+      </navigator>
+      <view class="nodataContainer" wx:if="{{activities.approve.length==0&&complete}}">
+          <image src="/img/nodata.png" mode="widthFix"/>
+          <view class="nodatatip">暂无数据</view>
+        </view>
+      </scroll-view>
+      
+    </view>
+  </van-tab>
+  <van-tab title="未通过">
+    <view class="container">
+      <scroll-view scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore" >
+      <navigator target="" url="../progress/progress?state={{item.state}}&activityID={{item.activityID}}" hover-class="none" wx:for="{{activities.unapprove}}" wx:key="unapprove"wx:if="{{activities.unapprove.length!=0}}">
+        <view class="listitem">
+            <view class="titleContainer">
+              <image src="/icons/zonglan.png" class="titleicons"/>
+              <view class="title">{{item.title}}</view>
+            </view>
+          <view class="detail">
+            <text class="time">{{item.time}}</text>
+            <text class="site">{{item.site}}</text>
+            <text class="number">{{item.people}}人</text>
+          </view>
+        </view>
+      </navigator>
+          <view class="nodataContainer" wx:if="{{activities.unapprove.length==0&&complete}}">
+          <image src="/img/nodata.png" mode="widthFix"/>
+          <view class="nodatatip">暂无数据</view>
+        </view>
+      </scroll-view>
+  
+    </view>
+  </van-tab>
+</van-tabs>

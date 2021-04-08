@@ -1,0 +1,128 @@
+<!-- pages/student/signup/signup.wxml -->
+<view class="page">
+    <view class="titleContainer">
+        <view class="title">{{club}} {{department}}面试报名表</view>
+        <view class="switchContainer" wx:if="{{!submitted}}">
+            <view class="title">启用我的简历模版</view>
+            <switch checked="{{checked}}" color="#ffd73b" class="switch" bindchange="handleChange" />
+        </view>
+    </view>
+    <form catchsubmit="formSubmit">
+        <view class="itemContainer" wx:if="{{styleTemplate.volition}}">
+            <view class="volunteertitle">该部门的志愿优先级</view>
+            <view class="itemtext revise">
+                <picker bindchange="bindPickerChange" data-item='volition'  range="{{volitionArray}}" value="{{form.volition}}" name="volition">
+                    <view class="picker">
+                        <text class="text {{form.volition==''||!form.volition?'grey':''}}">{{form.volition==''||!form.volition?'请选择志愿':form.volition}}</text>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="logoItemContainer">
+            <view class="itemtitle">照片</view>
+            <view class="logoContainer" bind:tap="chooseImg">
+                <view class="noLogo">
+                    <image src="{{form.photo==''||!form.photo?defaultImg:form.photo}}" />
+                    <view class="nologotip">上传照片</view>
+                </view>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">姓名</view>
+            <view class="itemtext">
+                <input type="text" value="{{form.name}}" disabled name="name"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">性别</view>
+            <view class="itemtext">
+                <input type="text" value="{{form.sex}}" disabled name="sex"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">学号</view>
+            <view class="itemtext">
+                <input type="text" value="{{form.studentNumber}}" disabled name="studentNumber"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">学院</view>
+            <view class="itemtext">
+                <input type="text" value="{{form.college}}" disabled name="college"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">班级</view>
+            <view class="itemtext">
+                <input type="text" value="{{form.classes}}" disabled name="classes"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">所在校区</view>
+            <view class="itemtext">
+                <input type="text" value="{{form.campus}}" disabled name="campus"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">手机号码</view>
+            <view class="itemtext {{reviseStatus?'':'revise'}}">
+                <input type="text" value="{{form.phone}}" placeholder-class="grey" placeholder="请输入" name="phone"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">微信</view>
+            <view class="itemtext {{reviseStatus?'':'revise'}}">
+                <input type="text" value="{{form.wechat}}" placeholder-class="grey" placeholder="请输入" name="wechat"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">政治面貌</view>
+            <view class="itemtext revise">
+                <picker bindchange="bindPickerChange" data-item="politics"  range="{{politicsArray}}" value="{{form.politics}}" name="politics">
+                    <view class="picker">
+                        <text class="text {{form.politics==''||!form.politics?'grey':''}}">{{form.politics==''||!form.politics?'请选择政治面貌':form.politics}}</text>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="title">简历内容</view>
+        <view class="itemContainer" wx:if="{{styleTemplate.hobby}}">
+            <view class="itemtitle">爱好特长</view>
+            <view class="itemtext revise">
+                <textarea maxlength="-1" value="{{form.hobby}}"  name="hobby" placeholder="请输入" placeholder-class="grey" auto-height disabled="{{reviseStatus}}"></textarea>
+            </view>
+        </view>
+        <view class="itemContainer" wx:if="{{styleTemplate.advantage}}">
+            <view class="itemtitle">我的优势</view>
+            <view class="itemtext revise">
+                <textarea maxlength="-1" value="{{form.advantage}}" name="advantage" placeholder="请输入" placeholder-class="grey" auto-height disabled="{{reviseStatus}}"></textarea>
+            </view>
+        </view>
+        <view class="itemContainer" wx:if="{{styleTemplate.self}}">
+            <view class="itemtitle">自我评价</view>
+            <view class="itemtext revise">
+                <textarea maxlength="-1" value="{{form.self}}" name="self" placeholder="请输入" placeholder-class="grey" auto-height disabled="{{reviseStatus}}"></textarea>
+            </view>
+        </view>
+        <view class="itemContainer" wx:for="{{styleTemplate.reason}}">
+            <view class="itemtitle">为什么加入我们</view>
+            <view class="itemtext revise">
+                <textarea maxlength="-1" value="{{form.reason}}" name="reason" placeholder="请输入" placeholder-class="grey" auto-height disabled="{{reviseStatus}}"></textarea>
+            </view>
+        </view>
+        <view class="itemContainer" wx:for="{{custom}}" wx:key="custom">
+            <view class="itemtitle">{{item.key}}</view>
+            <view class="itemtext revise">
+                <textarea maxlength="-1" value="{{item.value}}" name="{{item.key}}" placeholder="请输入" placeholder-class="grey" auto-height disabled="{{reviseStatus}}"></textarea>
+            </view>
+        </view>
+        <view class="btcontainer">
+            <button class="bt" form-type="submit" hover-class="bthover" bind:tap="changeStatus">
+                {{submitted?'提交修改':'确认报名'}}
+            </button>
+        </view>
+    </form>
+    <view class="copyright">
+        <view>Copyright©2021 All rights reserved by Quanta Center</view>
+    </view>
+</view>

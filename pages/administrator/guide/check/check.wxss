@@ -1,0 +1,143 @@
+/* pages/administrator/guide/check/check.wxss */
+.page{
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 30rpx;
+}
+.title{ 
+    font-size: 34rpx;
+    padding: 10rpx 0;
+    margin: 10rpx 0;
+}
+
+.steps .van-step__title{
+    font-size: 32rpx;
+    margin-bottom: 10rpx;
+}
+.stepinfo{
+    font-size: 29rpx;
+    
+    padding: 20rpx 10rpx;
+    color: #cccccc;
+}
+.steps .van-step__icon{
+    width: 40rpx;
+    height: 32rpx;
+}
+/* 活动申请表 */
+
+.formContainer{
+    width: 100%;
+    position: relative;
+    bottom: 30rpx;
+    margin: 0 auto;
+}
+.itemContainer{
+    margin: 35rpx 0;
+}
+.itemtitle{
+    color: #cccccc;
+    font-size: 34rpx;
+    margin: 10rpx 0;
+    width: 100%;
+}
+.itemtext{
+    background-color: #fafafd;
+    border: 1rpx solid #cccccc;
+    border-radius: 10rpx;
+    min-height: 65rpx;
+    padding: 20rpx 20rpx;
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+}
+.text{
+    width: 100%;
+    font-size: 32rpx;
+    color: #333333;
+}
+.itemtext>textarea{
+    width: 100%;
+    font-size: 32rpx;
+    height: 90rpx;
+    color: #333333;
+}
+/* 预览 */
+.previewContainer{
+    margin: 20rpx 0;
+}
+button::after{
+    border: none;
+ }
+
+
+.grey{
+     color: #cccccc;
+     font-size: 34rpx;
+    margin: 20rpx 0;
+ }
+
+ /* 指导意见 */
+.suggestion{
+    margin-top: 50rpx;
+ }
+.suggestiontitle{
+    color: #333333;
+    font-size: 34rpx;
+    margin: 20rpx 0;
+    width: 100%;
+}
+/* 是否通过 */
+.passContainer{
+    width: 100%;
+    margin: 30rpx auto;
+}
+.page-section-title{
+    font-size: 34rpx;
+    color: #333333;
+    margin: 20rpx 0;
+}
+.radio{
+    color: #333333;
+    font-size: 34rpx;
+    margin: 20rpx 30rpx;
+}
+.radios{
+    display: flex;
+    justify-content: space-around;
+    margin: 30rpx 0;
+}
+/* 通过 */
+.btcontainer{
+    width: 100%;
+    margin-top: 50rpx;
+}
+.bt{
+    background-color: #ffd73b;
+    width: 80%;
+    height: 100rpx;
+    font-size: 34rpx;
+    line-height: 100rpx;
+    color: #333333;
+    border: none;
+}
+.bthover{
+    background-color: #E5C136;
+}
+/* 版权声明 */
+.copyright{
+    padding: 50rpx 0;
+    width: 100%;
+    text-align: center;
+    
+
+}
+  .copyright>view{
+    color: #dbdbdb;
+    font-size: 24rpx;
+  }
+  

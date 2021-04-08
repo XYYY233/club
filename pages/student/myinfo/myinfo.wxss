@@ -1,0 +1,156 @@
+/* pages/student/myinfo/myinfo.wxss */
+.page{
+    width: 90%;
+    margin: 0 auto;
+}
+.title{
+    color: #333333;
+    font-size: 32rpx;
+}
+/* photo */
+.logoItemContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20rpx 0;
+}
+.logoContainer{
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 15rpx;
+    overflow: hidden;
+}
+.noLogo{
+    position: relative;
+}
+.noLogo image{
+    width: 150rpx;
+    height: 150rpx;
+}
+.nologotip{
+    position: absolute;
+    bottom: 12rpx;
+    width: 150rpx;
+    
+    text-align: center;
+    font-size: 25rpx;
+    color: #ffffff;
+    background-color: rgba(105,105,105,0.3);
+}
+.must{
+    color: #fa5151;
+}
+.itemtitle{
+    color: #cccccc;
+    font-size: 34rpx;
+    margin: 10rpx 0;
+    /* width: 100%; */
+}
+.itemContainer{
+    margin: 20rpx 0;
+}
+.itemtext{
+    background-color: #fafafd;
+    border: 1rpx solid #cccccc;
+    border-radius: 10rpx;
+    min-height: 65rpx;
+    padding: 20rpx 20rpx;
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+}
+/* 修改状态 */
+.revise{
+    background-color: #ffffff;
+    border: 1rpx solid #cccccc;
+    border-radius: 10rpx;
+    min-height: 65rpx;
+    padding: 20rpx 20rpx;
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+}
+
+.text{
+    width: 100%;
+    font-size: 32rpx;
+    color: #333333;
+    text-align: start;
+}
+.itemtext>textarea{
+    width: 100%;
+    font-size: 32rpx;
+    height: 90rpx;
+    color: #333333;
+}
+.itemtext>input{
+    width: 100%;
+    font-size: 32rpx;
+    color: #333333;
+    z-index: 0;
+}
+picker{
+    width: 100%;
+}
+button::after{
+    border: none;
+ }
+
+.btcontainer{
+    width: 100%;
+    margin-top: 50rpx;
+    display: flex;
+}
+.bt{
+    background-color: #ffd73b;
+    width: 80%;
+    height: 100rpx;
+    font-size: 34rpx;
+    line-height: 100rpx;
+    color: #333333;
+    border: none;
+}
+
+.bt-half{
+    background-color: #ffd73b;
+    width: 35%;
+    height: 100rpx;
+    font-size: 34rpx;
+    line-height: 100rpx;
+    color: #333333;
+    border: none;
+}
+.cancelbt{
+    background-color: #efefef;
+}
+
+.cancelbthover{
+    background-color: #dcdcdc;
+}
+.bthover{
+    background-color: #E5C136;
+}
+/* 版权声明 */
+.copyright{
+    padding: 50rpx 0;
+    width: 100%;
+    text-align: center;
+    
+
+}
+  .copyright>view{
+    color: #dbdbdb;
+    font-size: 24rpx;
+  }
+  
+  .grey{
+    color: #cccccc;
+}

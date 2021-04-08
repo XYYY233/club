@@ -1,0 +1,12 @@
+<view class="page">
+    <navigator hover-class="none" class="clubContainer" url="../club/club?clubid={{item.clubID}}" wx:for="{{clubs}}" wx:key="clubs">
+        <view class="title">
+            <view class="logo">
+                <van-image round fit="cover" width="80rpx" height="80rpx" src="{{item.logo}}"/>
+            </view>
+            <text class="club">{{item.club}}</text>
+        </view>
+        <image src="/icons/more-grey-right.png" class="more"/>
+    </navigator>
+
+</view>

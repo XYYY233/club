@@ -1,0 +1,22 @@
+<!--pages/administrator/guide/mine/mine.wxml-->
+<view class="page">
+    <view class="title">
+        <text class="name">{{name}}</text>
+        <navigator url="/pages/set/set" hover-class="none" open-type="navigate">
+            <image src="/icons/set.png" />
+        </navigator>
+    </view>
+    <van-tabs active="{{0}}" swipeable color="#ffd73b">
+        <van-tab title="我指导的社团">
+            <view class="container">
+                <view class="checkitem" wx:for="{{clubs}}" wx:key="club">
+                        <view class="clubtitle">{{item.name}}</view>
+                        <view class="info">负责人：{{item.student}}</view>
+                        <view class="info">学院：{{item.college}}</view>
+                        <view class="info">班级：{{item.classes}}</view>
+                        <view class="info">电话：{{item.phone}}</view>
+                    </view>
+            </view>
+        </van-tab>
+    </van-tabs>
+</view>

@@ -1,0 +1,36 @@
+<!-- pages/administrator/union/searchclub/searchclub.wxml -->
+<view class="page">
+
+    <view class="searchContainer">
+        <input class="searchInput" bindinput="handleSearchInput" confirm-type="search" placeholder="请输入社团名称" placeholder-style="color:#CDC7D3;font-size:30rpx" />
+        <view class="searchicon" bind:tap="handleSearch">
+            <image src="/icons/sousuo-grey.png" />
+        </view>
+    </view>
+    <view class="dataContainer" wx:if="{{value!=''}}">
+        <navigator url="../club{{type}}/club{{type}}?clubid={{item.clubID}}" hover-class="none" wx:for="{{clubs}}">
+            <view class="checkitem">
+                <view class="title">
+                    <view class="clubname">
+                        <rich-text nodes="{{item.name}}"></rich-text>
+                        <view class="logout" wx:if="{{item.deprecated}}">已注销</view>
+                    </view>
+                    <image src="/icons/more-black-right.png" />
+                </view>
+                <view class="info">指导老师：{{item.teacher}}</view>
+                <view class="info">
+                    <text>指导单位：{{item.guide}}</text>
+                    <text>{{item.people}}人</text>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <view class="nodataContainer" wx:if="{{!havesearch}}">
+        <image src="/img/sousuochahua.png" mode="widthFix" />
+        <view class="nodatatip">搜索结果会显示在这里</view>
+    </view>
+    <view class="nodataContainer" wx:if="{{nodata}}">
+        <image src="/img/nodata.png" mode="widthFix" />
+        <view class="nodatatip">暂无数据</view>
+    </view>
+</view>

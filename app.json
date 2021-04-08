@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/forget/forget",
+    "pages/student/student/student",
+    "pages/student/clublist/clublist",
+    "pages/administrator/union/union/union",
+    "pages/administrator/union/clubinfo/clubinfo",
+    "pages/studentLogin/studentLogin",
+    "pages/adminLogin/adminLogin",
+    "pages/administrator/club/club/club",
+    "pages/administrator/club/progress/progress",
+    "pages/administrator/union/progress/progress",
+    "pages/administrator/union/searchclub/searchclub",
+    "pages/administrator/union/clubstop/clubstop",
+    "pages/administrator/union/clubcheck/clubcheck",
+    "pages/administrator/teacher/teacher/teacher",
+    "pages/administrator/guide/guide/guide",
+    "pages/administrator/teacher/check/check",
+    "pages/administrator/guide/check/check",
+    "pages/set/set",
+    "pages/emailset/emailset",
+    "pages/passwordset/passwordset",
+    "pages/usinghelp/usinghelp",
+    "pages/feedback/feedback",
+    "pages/student/club/club",
+    "pages/student/searchclub/searchclub",
+    "pages/student/myinfo/myinfo",
+    "pages/student/signup/signup",
+    "pages/student/result/result"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "广外社团",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "networkTimeout": {
+    "request": 10000
+    }
+}

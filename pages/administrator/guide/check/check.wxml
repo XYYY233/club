@@ -1,0 +1,143 @@
+<!--pages/administrator/guide/check/check.wxml-->
+<view class="page">
+    <view class="title">活动申请审批进度</view>
+    <view class="progressContainer">
+        <van-steps desc-class="stepinfo" custom-class="steps" steps="{{ steps }}" active="{{ active }}" direction="vertical" active-color="#333333" inactive-color="#CCCCCC" active-icon="{{stepState==0?'/icons/jinggao.png':'/icons/ok.png'}}" />
+    </view>
+    <view class="formContainer">
+        <view class="title">活动申请表</view>
+        <view class="itemContainer">
+            <view class="itemtitle">活动全称</view>
+            <view class="itemtext">
+                <text class="text">{{form.title}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">活动人数</view>
+            <view class="itemtext">
+                <text class="text">{{form.people}}人</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">活动时间</view>
+            <view class="itemtext">
+                <text class="text">{{form.time}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">活动场地</view>
+            <view class="itemtext">
+                <text class="text">{{form.site}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">现场负责学生</view>
+            <view class="itemtext">
+                <text class="text">{{form.studentName}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">现场负责学生联系方式</view>
+            <view class="itemtext">
+                <text class="text">{{form.studentPhone}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">现场负责老师</view>
+            <view class="itemtext">
+                <text class="text">{{form.teacherName}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">现场负责老师联系方式</view>
+            <view class="itemtext">
+                <text class="text">{{form.teacherPhone}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">活动类型</view>
+            <view class="itemtext">
+                <text class="text" wx:for="{{form.type}}">{{item}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">经费来源</view>
+            <view class="itemtext">
+                <text class="text">{{form.fundSource}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">经费数额</view>
+            <view class="itemtext">
+                <text class="text">{{form.fundAmount}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">活动简介</view>
+            <view class="itemtext">
+                <text class="text">{{form.introduction}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">学生社团申报意见</view>
+            <view class="itemtext">
+                <text class="text">{{form.opinion.club.content}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="previewContainer">
+        <button bind:tap="preview" hover-class="bthover" class="bt">预览活动策划书</button>
+    </view>
+<view class="suggestionContainer" wx:for="{{form.opinion.teachers}}" wx:key="index">
+        <view class="suggestion">
+            <view class="suggestiontitle" >指导老师{{item.teacherName}}意见</view>
+            <!-- <view class="grey">意见</view> -->
+            <view class="itemtext">
+                <text class="text">{{item.content}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="suggestionContainer" wx:if="{{form.opinion.guide.content!=''}}">
+        <view class="suggestion">
+            <view class="suggestiontitle">指导单位意见</view>
+            <!-- <view class="grey">意见</view> -->
+            <view class="itemtext">
+                <text class="text">{{form.opinion.guide.content}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- 提交意见 -->
+    <form catchsubmit="formSubmit" wx:if="{{state=='1'}}">
+        <view class="suggestion" >
+            <view class="suggestiontitle">指导单位意见</view>
+            <view class="itemtext">
+                <textarea maxlength="-1" placeholder="请输入意见" auto-height name="opinion"></textarea>
+            </view>
+        </view>
+        <view class="passContainer">
+            <view class="page-section-title">活动是否通过</view>
+            <radio-group bindchange="radioChange" class="radios" name="pass">
+                <label class="radio">
+                    <radio value="1" checked="true" color="#ffd73b" />
+                    通过
+                </label>
+                <label class="radio">
+                    <radio value="2" color="#ffd73b" />
+                    不通过
+                </label>
+            </radio-group>
+        </view>
+        <view class="suggestion" >
+            <view class="suggestiontitle">指导单位签名</view>
+            <view class="itemtext">
+                <textarea maxlength="-1" placeholder="请输入您的签名" auto-height name="sign"></textarea>
+            </view>
+        </view>
+        <view class="btcontainer">
+            <button form-type="submit" class="bt" hover-class="bthover">提交</button>
+        </view>
+    </form>
+    <view class="copyright">
+        <view>Copyright©2021 All rights reserved by Quanta Center</view>
+    </view>
+</view>

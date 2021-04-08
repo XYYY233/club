@@ -1,0 +1,98 @@
+<!-- pages/administrator/union/clubinfo/clubinfo.wxml -->
+<view class="page">
+    <view class="title">{{club}}</view>
+    <view class="itemContainer">
+        <view class="itemtitle">社团负责人</view>
+        <view class="itemtext">
+            <text class="text">{{student}}</text>
+        </view>
+    </view>
+    <view class="teacherContaier" wx:for="{{teachers}}">
+        <view class="title">指导老师（{{index+1}}）</view>
+        <view class="itemContainer">
+            <view class="itemtitle">姓名</view>
+            <view class="itemtext">
+                <text class="text">{{item.name}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">手机号</view>
+            <view class="itemtext">
+                <text class="text">{{item.phone}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">邮箱</view>
+            <view class="itemtext">
+                <text class="text">{{item.email}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="title">业务指导单位</view>
+    <view class="itemContainer">
+        <view class="itemtitle">指导单位名称</view>
+        <view class="itemtext">
+            <text class="text">{{guide}}</text>
+        </view>
+    </view>
+    <view class="memberContainer">
+        <view class="titleContainer">
+            <view class="title">社员人数: {{memberNumber}}</view>
+            <view class="pickerContainer">
+                <picker mode="date" fields="year" value="{{time}}" start="2000" end="2030" bindchange="bindTimeChange">
+                    <view class="picker">
+                        <text>{{time}}学年</text>
+                        <image src="/icons/more-black.png" />
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="member">
+            <van-collapse custom-class="collapse" value="{{ activeNames }}" bind:change="onChange" accordion>
+                <van-collapse-item custom-class="collapse-item" title="{{item.duty}} {{item.name}}" name="{{memberindex+''}}" wx:for="{{members}}" wx:for-index="memberindex" wx:key="member">
+                    <view class="memberinfoContainer">
+                        <view class="infoitem">
+                            <view class="membertitle">姓名</view>
+                            <view class="contnet">{{item.name}}</view>
+                        </view>
+                        <view class="infoitem">
+                            <view class="membertitle">性别</view>
+                            <view class="contnet">{{item.sex}}</view>
+                        </view>
+                        <view class="infoitem">
+                            <view class="membertitle">学院</view>
+                            <view class="contnet">{{item.college}}</view>
+                        </view>
+                        <view class="infoitem">
+                            <view class="membertitle">班级</view>
+                            <view class="contnet">{{item.classes}}</view>
+                        </view>
+                        <view class="infoitem">
+                            <view class="membertitle">学号</view>
+                            <view class="contnet">{{item.studentNumber}}</view>
+                        </view>
+                        <view class="infoitem">
+                            <view class="membertitle">校区</view>
+                            <view class="contnet">{{item.campus}}</view>
+                        </view>
+                        <view class="infoitem">
+                            <view class="membertitle">政治面貌</view>
+                            <view class="contnet">{{item.politics}}</view>
+                        </view>
+                        <view class="infoitem">
+                            <view class="membertitle">联系方式</view>
+                            <view class="contnet">{{item.phone}}</view>
+                        </view>
+                        <view class="infoitem">
+                            <view class="membertitle">备注</view>
+                            <view class="contnet">{{item.remark}}</view>
+                        </view>
+                    </view>
+                </van-collapse-item>
+            </van-collapse>
+        </view>
+    </view>
+    <view class="copyright">
+        <view>Copyright©2021 All rights reserved by Quanta Center</view>
+    </view>
+</view>

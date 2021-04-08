@@ -1,0 +1,79 @@
+/* pages/administrator/guide_teacher/activity_check/activity_check.wxss */
+/* .container{
+    padding-bottom: 128rpx;
+} */
+.listitem{
+    
+    width: 85%;
+    min-height: 90rpx;
+    border-radius: 10rpx;
+    margin: 25rpx auto;
+    padding: 25rpx 25rpx;
+    box-shadow:1px 1px 8px 1px rgba(159,188,217,0.18);
+}
+.titleContainer{
+    display: flex;
+    align-items: center;
+}
+.title{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap ;
+    word-break:break-all;
+} 
+.titleicons{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 15rpx;
+}
+.icons{
+    width: 30rpx;
+    height: 25rpx;
+    margin-right: 15rpx;
+}
+.checked{
+    color: #07C160;
+    border: #07C160 1rpx solid;
+    padding: 5rpx 7rpx;
+    border-radius: 5px;
+    margin-left: 20rpx;
+    font-size: 26rpx;
+}
+.detail{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-top: 10rpx;
+}
+.detail>text{
+    font-size: 30rpx;
+    color: #cccccc;
+}
+.time{
+    width: 30%;
+}
+.site{
+    width: 32%;
+    text-align: center;
+}
+.number{
+    width: 19%;
+    text-align: end;
+}
+/* 暂无数据 */
+.nodataContainer{
+    width: 100%;
+    margin-top: 140rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.nodataContainer image{
+    width: 85%;
+}
+.nodatatip{
+    color: #cccccc;
+    font-size: 34rpx;
+    margin: 20rpx 0;
+}

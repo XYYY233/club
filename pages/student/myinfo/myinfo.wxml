@@ -1,0 +1,134 @@
+<!-- pages/student/myinfo/myinfo.wxml -->
+<view class="page">
+    <view class="title">个人基本信息</view>
+    <view class="logoItemContainer">
+        <view class="itemtitle">
+            <text class="must">*</text>
+            照片
+        </view>
+        <view class="logoContainer" bind:tap="chooseImg">
+            <view class="noLogo">
+                <image src="{{student.photo==''?defaultImg:student.photo}}" />
+                <view class="nologotip" wx:if="{{!reviseStatus}}">上传照片</view>
+            </view>
+        </view>
+    </view>
+    <form catchsubmit="formSubmit">
+        <view class="itemContainer">
+            <view class="itemtitle">
+                <text class="must">*</text>
+                姓名
+            </view>
+            <view class="itemtext">
+                <input type="text" value="{{student.name}}" disabled name="name" />
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">
+                <text class="must">*</text>
+                性别
+            </view>
+            <view class="itemtext">
+                <input type="text" value="{{student.sex}}" disabled name="sex"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">
+                <text class="must">*</text>
+                学号
+            </view>
+            <view class="itemtext">
+                <input type="text" value="{{student.studentNumber}}" disabled name="studentNumber"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">
+                <text class="must">*</text>
+                学院
+            </view>
+            <view class="itemtext">
+                <input type="text" value="{{student.college}}" disabled name="college"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">
+                <text class="must">*</text>
+                班级
+            </view>
+            <view class="itemtext">
+                <input type="text" value="{{student.classes}}" disabled name="classes"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">
+                <text class="must">*</text>
+                所在校区
+            </view>
+            <view class="itemtext">
+                <input type="text" value="{{student.campus}}" disabled name="campus"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">
+                <text class="must">*</text>
+                手机号码
+            </view>
+            <view class="itemtext {{reviseStatus?'':'revise'}}">
+                <input type="text" value="{{student.phone}}" placeholder-class="grey" placeholder="请输入"  disabled="{{reviseStatus}}" name="phone"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">
+                <text class="must">*</text>
+                微信
+            </view>
+            <view class="itemtext {{reviseStatus?'':'revise'}}">
+                <input type="text" value="{{student.wechat}}" placeholder-class="grey" placeholder="请输入"  disabled="{{reviseStatus}}" name="wechat"/>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">
+                <text class="must">*</text>
+                政治面貌
+            </view>
+            <view class="itemtext {{reviseStatus?'':'revise'}}">
+                <picker bindchange="bindPickerChange" value="{{student.politics}}" name="politics" range="{{politicsArray}}" disabled="{{reviseStatus}}">
+                    <view class="picker">
+                        <text class="text {{student.politics==''?'grey':''}}">{{student.politics==''?'请选择政治面貌':student.politics}}</text>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="title">简历模版</view>
+        <view class="itemContainer">
+            <view class="itemtitle">爱好特长</view>
+            <view class="itemtext {{reviseStatus?'':'revise'}}">
+                <textarea maxlength="-1" value="{{student.hobby}}" name="hobby" placeholder-class="grey" placeholder="请输入" auto-height disabled="{{reviseStatus}}"></textarea>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">我的优势</view>
+            <view class="itemtext {{reviseStatus?'':'revise'}}">
+                <textarea maxlength="-1" value="{{student.advantage}}" name="advantage" placeholder-class="grey" placeholder="请输入" auto-height disabled="{{reviseStatus}}"></textarea>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">自我评价</view>
+            <view class="itemtext {{reviseStatus?'':'revise'}}">
+                <textarea maxlength="-1" value="{{student.self}}" name="self" placeholder="请输入" placeholder-class="grey"  auto-height disabled="{{reviseStatus}}"></textarea>
+            </view>
+        </view>
+        <view class="btcontainer" wx:if="{{reviseStatus}}">
+            <button class="bt" hover-class="bthover" bind:tap="changeStatus">修改</button>
+        </view>
+        <view class="btcontainer" wx:if="{{!reviseStatus}}">
+            <button class="bt-half cancelbt" hover-class="cancelbthover" bind:tap="changeStatus">
+                取消
+            </button>
+            <button class="bt-half" hover-class="bthover" form-type="submit">保存</button>
+        </view>
+    </form>
+    <view class="copyright">
+        <view>Copyright©2021 All rights reserved by Quanta Center</view>
+    </view>
+</view>

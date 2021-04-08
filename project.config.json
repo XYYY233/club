@@ -1,0 +1,235 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": true,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.16.0",
+  "appid": "wxf42f5a78664a801c",
+  "projectname": "miniprogram-8",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "管理员登录",
+          "pathName": "pages/adminLogin/adminLogin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "学生登录",
+          "pathName": "pages/studentLogin/studentLogin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社联端",
+          "pathName": "pages/administrator/union/union/union",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社团端主页",
+          "pathName": "pages/administrator/club/club/club",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社团负责人-活动进展",
+          "pathName": "pages/administrator/club/progress/progress",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社团负责人-我的社团",
+          "pathName": "pages/administrator/club/club/club",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社团管理者 社联端",
+          "pathName": "pages/administrator/union/union/union",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "指导老师端-主页",
+          "pathName": "pages/administrator/teacher/teacher/teacher",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "指导老师-活动审核",
+          "pathName": "pages/administrator/teacher/check/check",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "指导单位",
+          "pathName": "pages/administrator/guide/guide/guide",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社团端-活动详情",
+          "pathName": "pages/administrator/club/progress/progress",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社联端-活动详情",
+          "pathName": "pages/administrator/union/progress/progress",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社联端-会员信息详情",
+          "pathName": "pages/administrator/union/clubinfo/clubinfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社联端-搜索社团",
+          "pathName": "pages/administrator/union/searchclub/searchclub",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "忘记密码",
+          "pathName": "pages/forget/forget",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社联端-注销社团页面",
+          "pathName": "pages/administrator/union/clubstop/clubstop",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "设置",
+          "pathName": "pages/set/set",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社联端-审核社团",
+          "pathName": "pages/administrator/union/clubcheck/clubcheck",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "修改邮箱",
+          "pathName": "pages/emailset/emailset",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "修改密码",
+          "pathName": "pages/passwordset/passwordset",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "反馈意见",
+          "pathName": "pages/feedback/feedback",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "使用帮助",
+          "pathName": "pages/usinghelp/usinghelp",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "学生端",
+          "pathName": "pages/student/student/student",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "不同类别社团页面",
+          "pathName": "pages/student/clublist/clublist",
+          "query": "club=思想政治类",
+          "scene": null
+        },
+        {
+          "name": "社团详情页面",
+          "pathName": "pages/student/club/club",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "学生端-我的信息",
+          "pathName": "pages/student/myinfo/myinfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "学生端-报名",
+          "pathName": "pages/student/signup/signup",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "学生端-面试结果",
+          "pathName": "pages/student/result/result",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

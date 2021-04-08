@@ -1,0 +1,50 @@
+<!--pages/administrator/club_manage/club_manage/club_manage.wxml-->
+<mamber_info wx:if="{{active==0}}"></mamber_info>
+<activities wx:elif="{{active==1}}"></activities>
+<club_admin wx:elif="{{active==2}}"></club_admin>
+
+
+<van-tabbar active-color="#333333" inactive-color="#333333" active="{{ active }}" bind:change="onChange"  safe-area-inset-bottom border="false">
+  <van-tabbar-item>
+    <image
+      slot="icon"
+      src="/icons/chengyuan1.png"
+      mode="aspectFit"
+      style="width: 45rpx; height: 55rpx;"
+    />
+    <image
+      slot="icon-active"
+      src="/icons/chengyuan-yellow.png"
+      mode="aspectFit"
+      style="width: 45rpx; height: 55rpx;"
+    />
+    社团总览
+    </van-tabbar-item>
+  <van-tabbar-item>
+    <image
+      slot="icon"
+      src="/icons/zonglan.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 45rpx;"
+    />
+    <image
+      slot="icon-active"
+      src="/icons/zonglan-yellow.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 45rpx;"
+    />
+    活动总览</van-tabbar-item>
+  <van-tabbar-item >
+    <image
+      slot="icon"
+      src="/icons/guanlishetuan.png"
+      mode="aspectFit"
+      style="width: 45rpx; height: 55rpx;"
+    />
+    <image
+      slot="icon-active"
+      src="/icons/guanlishetuan-yellow.png"
+      mode="aspectFit"
+      style="width: 45rpx; height: 55rpx;"
+    />管理社团</van-tabbar-item>
+</van-tabbar>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mamber_info":"/pages/administrator/union/mamber_info/mamber_info",
+    "activities":"/pages/administrator/union/activities/activities",
+    "club_admin":"/pages/administrator/union/club_admin/club_admin",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
+  }
+}

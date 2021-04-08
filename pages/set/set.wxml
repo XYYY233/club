@@ -1,0 +1,34 @@
+<!-- pages/set/set.wxml -->
+<view class="page">
+    <navigator class="item" hover-class="none" url="/pages/student/myinfo/myinfo" wx:if="{{role=='student'}}">
+        <view class="title">简历信息</view>
+        <image src="/icons/more-black-right.png" />
+    </navigator>
+    <navigator class="item" hover-class="none" url="/pages/emailset/emailset" wx:if="{{role!='union'}}">
+        <view class="title">修改邮箱</view>
+        <image src="/icons/more-black-right.png" />
+    </navigator>
+    <navigator class="item" hover-class="none" url="/pages/passwordset/passwordset" wx:if="{{role!='union'}}">
+        <view class="title">修改密码</view>
+        <image src="/icons/more-black-right.png" />
+    </navigator>
+    <navigator wx:if="{{role=='student'}}" class="item" hover-class="none" target="miniProgram" open-type="navigate" app-id="{{ appId }}" extra-data="{{ extraData }}" version="release">
+<view class="title">使用帮助</view>
+        <image src="/icons/more-black-right.png" />
+        </navigator>
+    <navigator wx:else class="item" hover-class="none" url="/pages/usinghelp/usinghelp">
+        <view class="title">使用帮助</view>
+        <image src="/icons/more-black-right.png" />
+    </navigator>
+    <!-- <navigator class="item" hover-class="none" url="/pages/feedback/feedback"> -->
+    <navigator class="item" hover-class="none" target="miniProgram" open-type="navigate" app-id="{{ appId }}" extra-data="{{ extraData }}" version="release">
+        <view class="title">吐个槽</view>
+        <image src="/icons/more-black-right.png" />
+    </navigator>
+    <view class="btcontainer">
+        <button hover-class="bthover" class="bt" bind:tap="logout">退出登录</button>
+    </view>
+    <view class="copyright">
+        <view>Copyright©2021 All rights reserved by Quanta Center</view>
+    </view>
+</view>

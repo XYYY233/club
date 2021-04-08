@@ -1,0 +1,46 @@
+<!-- pages/student/club/club.wxml -->
+<view class="page">
+    <view class="swiperContainer">
+        <swiper autoplay circular indicator-active-color="#fff" indicator-color="rgba(0, 0, 0, .5)" class="swiper">
+            <swiper-item wx:for="{{swiperImg}}" wx:key="swiperImg">
+                <view class="black"></view>
+                <image src="{{item}}" class="swiperImg" mode="widthFix" />
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="introContainer">
+        <view class="titleContainer">
+            <view class="logo">
+                <van-image round fit="cover" width="140rpx" height="140rpx" src="{{logo}}" />
+            </view>
+            <text class="clubname">{{name}}</text>
+        </view>
+        <view class="textContainer">
+            <!-- <text class="" selectable="false" space="false" decode="false"> -->
+            {{intro}}
+            <!-- </text> -->
+        </view>
+        <view class="qrCodeContainer" wx:if="{{qrCodes.length!=0}}">
+            <swiper indicator-dots class="qrSwiper">
+                <swiper-item wx:for="{{qrCodes}}" wx:key="qrcode">
+                    <view class="imgcontainer">
+                        <image src="{{img}}" wx:for="{{item}}" wx:key="qrcodeimg" wx:for-item="img" class="qrCode" mode="widthFix" bind:tap="previewImage" data-src="{{img}}" />
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="btcontainer">
+            <picker mode="selector" range="{{departmentArray}}" bindchange="showDepartment" value="{{index}}" wx:if="{{department[0].name!=''}}">
+                <button hover-class="bthover" form-type="submit" class="{{!open?'btdisabled':'loginbt'}}" disabled="{{!open}}">
+                {{!open?'暂未开放报名':'立即报名'}}
+                </button>
+            </picker>
+            <button hover-class="bthover" form-type="submit" class="{{!open?'btdisabled':'loginbt'}}" disabled="{{!open}}" bind:tap="navigateToSignup"  wx:else>
+                {{!open?'暂未开放报名':'立即报名'}}
+            </button>
+        </view>
+        <view class="copyright">
+            <view>Copyright©2021 All rights reserved by Quanta Center</view>
+        </view>
+    </view>
+</view>

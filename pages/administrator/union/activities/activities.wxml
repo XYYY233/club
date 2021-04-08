@@ -1,0 +1,219 @@
+<!-- pages/administrator/club_manage/activity_check/activity_check.wxml -->
+<view class="page">
+  <picker mode="date" fields="year" value="{{time}}" start="2000" end="2030" bindchange="bindTimeChange">
+    <view class="picker">
+      <!-- <image src="/icons/rili.png" /> -->
+      <text>{{time}}学年</text>
+      <image src="/icons/more-black.png" />
+    </view>
+  </picker>
+  <van-tabs active="{{ 0 }}" swipeable color="#ffd73b" animated wx:if="{{present}}">
+    <van-tab title="近7天" >
+      <view class="container">
+        <scroll-view scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore">
+        <navigator url="../progress/progress?state={{item.state}}&activityID={{item.activityID}}" hover-class="none" wx:for="{{activities.week}}" wx:key="week"  wx:if="{{activities.week.length!=0}}">
+          <view class="listitem">
+            <view class="titleContainer">
+              <image src="/icons/chengyuan1.png" class="icons"/>
+              <view class="title">{{item.club}}</view>
+              
+            </view>
+            <view class="titleContainer">
+              <image src="/icons/zonglan.png" class="titleicons"/>
+              <view class="title">{{item.title}}</view>
+            </view>
+            <view class="detail">
+              <text class="time">{{item.time}}</text>
+              <text class="site">{{item.site}}</text>
+              <text class="number">{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{activities.week.length==0&&complete}}">
+          <image src="/img/nodata.png" mode="widthFix"/>
+          <view class="nodatatip">暂无数据</view>
+        </view>
+        </scroll-view>
+        
+      </view>
+    </van-tab>
+    <van-tab title="一月内" >
+      <view class="container">
+        <scroll-view scroll-y style="height:{{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore" >
+        <navigator url="../progress/progress?state={{item.state}}&activityID={{item.activityID}}" hover-class="none" wx:for="{{activities.month}}" wx:key="month"wx:if="{{activities.month.length!=0}}">
+          <view class="listitem">
+            <view class="titleContainer">
+              <image src="/icons/chengyuan1.png" class="icons"/>
+              <view class="title">{{item.club}}</view>
+              
+            </view>
+            <view class="titleContainer">
+              <image src="/icons/zonglan.png" class="titleicons"/>
+              <view class="title">{{item.title}}</view>
+            </view>
+            <view class="detail">
+              <text class="time">{{item.time}}</text>
+              <text class="site">{{item.site}}</text>
+              <text class="number">{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{activities.month.length==0&&complete}}">
+          <image src="/img/nodata.png" mode="widthFix"/>
+          <view class="nodatatip">暂无数据</view>
+        </view>
+        </scroll-view>
+        
+      </view>
+    </van-tab>
+    <van-tab title="待审核" >
+      <view class="container">
+        <scroll-view scroll-y style="height:{{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore" >
+        <navigator url="../progress/progress?state={{item.state}}&activityID={{item.activityID}}" hover-class="none" wx:for="{{activities.undetermined}}" wx:key="undetermined"wx:if="{{activities.undetermined.length!=0}}">
+          <view class="listitem">
+            <view class="titleContainer">
+              <image src="/icons/chengyuan1.png" class="icons"/>
+              <view class="title">{{item.club}}</view>
+              
+            </view>
+            <view class="titleContainer">
+              <image src="/icons/zonglan.png" class="titleicons"/>
+              <view class="title">{{item.title}}</view>
+            </view>
+            <view class="detail">
+              <text class="time">{{item.time}}</text>
+              <text class="site">{{item.site}}</text>
+              <text class="number">{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{activities.undetermined.length==0&&complete}}">
+          <image src="/img/nodata.png" mode="widthFix"/>
+          <view class="nodatatip">暂无数据</view>
+        </view>
+        </scroll-view>
+        
+      </view>
+    </van-tab>
+    <van-tab title="未通过" >
+      <view class="container">
+        <scroll-view scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore" >
+        <navigator url="../progress/progress?state={{item.state}}&activityID={{item.activityID}}" hover-class="none" wx:for="{{activities.unapprove}}" wx:key="unapprove"wx:if="{{activities.unapprove.length!=0}}">
+          <view class="listitem">
+            <view class="titleContainer">
+              <image src="/icons/chengyuan1.png" class="icons"/>
+              <view class="title">{{item.club}}</view>
+              
+            </view>
+            <view class="titleContainer">
+              <image src="/icons/zonglan.png" class="titleicons"/>
+              <view class="title">{{item.title}}</view>
+            </view>
+            <view class="detail">
+              <text class="time">{{item.time}}</text>
+              <text class="site">{{item.site}}</text>
+              <text class="number">{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{activities.unapprove.length==0&&complete}}">
+          <image src="/img/nodata.png" mode="widthFix"/>
+          <view class="nodatatip">暂无数据</view>
+        </view>
+        </scroll-view>
+        
+      </view>
+    </van-tab>
+    <van-tab title="已举办" >
+      <view class="container">
+        <scroll-view scroll-y style="height:{{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore" >
+        <navigator  url="../progress/progress?state={{item.state}}&activityID={{item.activityID}}" hover-class="none" wx:for="{{activities.held}}" wx:key="held" wx:if="{{activities.held.length!=0}}">
+          <view class="listitem">
+            <view class="titleContainer">
+              <image src="/icons/chengyuan1.png" class="icons"/>
+              <view class="title">{{item.club}}</view>
+              
+            </view>
+            <view class="titleContainer">
+              <image src="/icons/zonglan.png" class="titleicons"/>
+              <view class="title">{{item.title}}</view>
+            </view>
+            <view class="detail">
+              <text class="time">{{item.time}}</text>
+              <text class="site">{{item.site}}</text>
+              <text class="number">{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer"wx:if="{{activities.held.length==0&&complete}}">
+          <image src="/img/nodata.png" mode="widthFix"/>
+          <view class="nodatatip">暂无数据</view>
+        </view>
+        </scroll-view>
+        
+      </view>
+    </van-tab>
+  </van-tabs>
+  <!-- 往年 -->
+
+  <van-tabs active="{{ 0 }}" swipeable color="#ffd73b" animated wx:if="{{!present}}">
+    <van-tab title="未通过">
+      <view class="container">
+        <scroll-view scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore" >
+        <navigator target="" url="../progress/progress?state={{item.state}}&activityID={{item.activityID}}" hover-class="none" wx:for="{{activities.unapprove}}" wx:key="unapprove"wx:if="{{activities.unapprove.length!=0}}">
+          <view class="listitem">
+            <view class="titleContainer">
+              <image src="/icons/chengyuan1.png" class="icons"/>
+              <view class="title">{{item.club}}</view>
+              
+            </view>
+            <view class="titleContainer">
+              <image src="/icons/zonglan.png" class="titleicons"/>
+              <view class="title">{{item.title}}</view>
+            </view>
+            <view class="detail">
+              <text class="time">{{item.time}}</text>
+              <text class="site">{{item.site}}</text>
+              <text class="number">{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{activities.unapprove.length==0&&complete}}">
+          <image src="/img/nodata.png" mode="widthFix"/>
+          <view class="nodatatip">暂无数据</view>
+        </view>
+        </scroll-view>
+        
+      </view>
+    </van-tab>
+    <van-tab title="已举办">
+      <view class="container">
+        <scroll-view scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore" >
+        <navigator target="" url="../progress/progress?state={{item.state}}&activityID={{item.activityID}}" hover-class="none" wx:for="{{activities.held}}" wx:key="held"wx:if="{{activities.held.length!=0}}">
+          <view class="listitem">
+            <view class="titleContainer">
+              <image src="/icons/chengyuan1.png" class="icons"/>
+              <view class="title">{{item.club}}</view>
+              
+            </view>
+            <view class="titleContainer">
+              <image src="/icons/zonglan.png" class="titleicons"/>
+              <view class="title">{{item.title}}</view>
+            </view>
+            <view class="detail">
+              <text class="time">{{item.time}}</text>
+              <text class="site">{{item.site}}</text>
+              <text class="number">{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{activities.held.length==0&&complete}}">
+          <image src="/img/nodata.png" mode="widthFix"/>
+          <view class="nodatatip">暂无数据</view>
+        </view>
+        </scroll-view>
+        
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>

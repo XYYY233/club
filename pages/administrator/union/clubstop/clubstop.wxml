@@ -1,0 +1,45 @@
+<!-- pages/administrator/union/clubstop/clubstop.wxml -->
+<view class="page">
+    <view class="title">{{club}}</view>
+    <view class="itemContainer">
+        <view class="itemtitle">社团负责人</view>
+        <view class="itemtext">
+            <text class="text">{{student}}</text>
+        </view>
+    </view>
+    <view class="teacherContaier" wx:for="{{teachers}}">
+        <view class="title">指导老师（{{index+1}}）</view>
+        <view class="itemContainer">
+            <view class="itemtitle">姓名</view>
+            <view class="itemtext">
+                <text class="text">{{item.name}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">手机号</view>
+            <view class="itemtext">
+                <text class="text">{{item.phone}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">邮箱</view>
+            <view class="itemtext">
+                <text class="text">{{item.email}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="title">业务指导单位</view>
+    <view class="itemContainer">
+        <view class="itemtitle">指导单位名称</view>
+        <view class="itemtext">
+            <text class="text">{{guide}}</text>
+        </view>
+    </view>
+    <view class="btContainer">
+     <button class="bt" hover-class="bthover" bind:tap="stopClub">暂停招新</button>
+        <button class="bt" hover-class="bthover" bind:tap="deprecatedClub">注销社团</button>
+    </view>
+    <view class="copyright">
+        <view>Copyright©2021 All rights reserved by Quanta Center</view>
+    </view>
+</view>

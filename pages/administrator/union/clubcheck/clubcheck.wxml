@@ -1,0 +1,127 @@
+<!-- pages/administrator/union/clubcheck/clubcheck.wxml -->
+<view class="page">
+    <view class="title">社团基本信息</view>
+    <view class="itemContainer">
+        <view class="itemtitle">社团名称</view>
+        <view class="itemtext">
+            <text class="text">{{clubInfo.club}}</text>
+        </view>
+    </view>
+    <view class="itemContainer">
+        <view class="itemtitle">社团类别</view>
+        <view class="itemtext">
+            <text class="text">{{clubInfo.clubType}}</text>
+        </view>
+    </view>
+    <view class="itemContainer">
+        <view class="itemtitle">活动校区</view>
+        <view class="itemtext">
+            <text class="text">{{clubInfo.campus}}</text>
+        </view>
+    </view>
+    <view class="itemContainer">
+        <view class="itemtitle">指导单位</view>
+        <view class="itemtext">
+            <text class="text">{{clubInfo.guide}}</text>
+        </view>
+    </view>
+    <!-- <view class="itemContainer">
+        <view class="itemtitle">管理层人数</view>
+        <view class="itemtext">
+            <text class="text">{{clubInfo.adminNumber}}</text>
+        </view>
+    </view>
+    <view class="itemContainer">
+        <view class="itemtitle">社员人数</view>
+        <view class="itemtext">
+            <text class="text">{{clubInfo.memberNumber}}</text>
+        </view>
+    </view> -->
+    <view class="teacherContainer" wx:for="{{clubInfo.teachers}}" wx:key="teacherindex" wx:for-index="teacherindex">
+        <view class="teachertitleBox">
+            <view class="clubinfotitle">指导老师信息（{{teacherindex+1}}）</view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">姓名</view>
+            <view class="itemtext ">
+                <text class="text">{{item.name}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">所在学院</view>
+            <view class="itemtext ">
+                <text class="text">{{item.college}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">工号</view>
+            <view class="itemtext">
+                <text class="text">{{item.jobNumber}}</text>
+            </view>
+        </view>
+        <view class="itemContainer">
+            <view class="itemtitle">联系方式</view>
+            <view class="itemtext">
+                <text class="text">{{item.phone}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="clubinfotitle">社团负责人信息</view>
+    <view class="itemContainer">
+        <view class="itemtitle">姓名</view>
+        <view class="itemtext">
+            <text class="text">{{clubInfo.studentName}}</text>
+        </view>
+    </view>
+    <view class="itemContainer">
+        <view class="itemtitle">所在学院</view>
+        <view class="itemtext">
+            <text class="text">{{clubInfo.studentCollege}}</text>
+        </view>
+    </view>
+    <view class="itemContainer">
+        <view class="itemtitle">学号</view>
+        <view class="itemtext">
+            <text class="text">{{clubInfo.studentNumber}}</text>
+        </view>
+    </view>
+    <view class="itemContainer">
+        <view class="itemtitle">政治面貌</view>
+        <view class="itemtext">
+            <text class="text">{{clubInfo.studentPolitics}}</text>
+        </view>
+    </view>
+    <view class="itemContainer">
+        <view class="itemtitle">联系方式</view>
+        <view class="itemtext">
+            <text class="text">{{clubInfo.studentPhone}}</text>
+        </view>
+    </view>
+    <view class="itemContainer">
+        <view class="itemtitle">辅导员</view>
+        <view class="itemtext">
+            <text class="text">{{clubInfo.counselor}}</text>
+        </view>
+    </view>
+    <form catchsubmit="formSubmit" wx:if="{{state=='1'}}">
+        <view class="passContainer">
+            <view class="page-section-title">申请是否通过</view>
+            <radio-group bindchange="radioChange" class="radios" name="pass">
+                <label class="radio">
+                    <radio value="1" checked="true" color="#ffd73b" />
+                    通过
+                </label>
+                <label class="radio">
+                    <radio value="2" color="#ffd73b" />
+                    不通过
+                </label>
+            </radio-group>
+        </view>
+        <view class="btcontainer">
+            <button form-type="submit" class="bt" hover-class="bthover">提交</button>
+        </view>
+    </form>
+    <view class="copyright">
+        <view>Copyright©2021 All rights reserved by Quanta Center</view>
+    </view>
+</view>

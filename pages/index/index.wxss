@@ -1,0 +1,54 @@
+/**index.wxss**/
+page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  width: 85%;
+  height: 380rpx;
+  margin: 0rpx auto;
+  margin-bottom: 100rpx;
+  border-radius: 20rpx;
+  box-shadow:1px 1px 5px 1px rgba(159,188,217,0.22);
+  position: relative;
+}
+.title{
+  position: absolute;
+  font-size: 34rpx;
+  color: #333333;
+  bottom: 20rpx;
+  right: 50rpx;
+}
+
+.img{
+  width: 80%;
+  height: 410rpx;
+  position: relative;
+  bottom: 30rpx;
+  right: 15rpx;
+}
+.student{
+  width: 80%;
+  height: 420rpx;
+  position: relative;
+  right: 15rpx;
+  bottom: 20rpx;
+}
+/* 版权声明 */
+.copyright{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  padding-bottom: 30rpx;
+  bottom: 0;
+}
+.copyright>view{
+  color: #dbdbdb;
+  font-size: 24rpx;
+}
+

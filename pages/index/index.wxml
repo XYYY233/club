@@ -1,0 +1,17 @@
+<!-- <view class="page"> -->
+    <navigator class="container" hover-class="none" url="../studentLogin/studentLogin">
+        <view class="imgContainer">
+            <image src="/img/xuesheng.png" class="img" mode="heightFix" class="student" />
+        </view>
+        <view class="title">我是学生</view>
+    </navigator>
+    <navigator class="container" hover-class="none" url="../adminLogin/adminLogin">
+        <view class="imgContainer">
+            <image src="/img/guanliyuan.png" class="img" mode="heightFix" />
+        </view>
+        <view class="title">我是管理员</view>
+    </navigator>
+<!-- </view> -->
+<view class="copyright">
+    <view>Copyright©2021 All rights reserved by Quanta Center</view>
+</view>

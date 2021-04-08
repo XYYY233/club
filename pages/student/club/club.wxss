@@ -1,0 +1,110 @@
+/* pages/student/club/club.wxss */
+.black{
+    width: 100%;
+    height: 420rpx;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.swiper{
+    height: 420rpx;
+    z-index: 0;
+}
+.swiperImg{
+    width: 100%;
+}
+/* 主要内容 */
+.introContainer{
+    background-color: #ffffff;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    position: relative;
+    bottom: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+.titleContainer{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom:90rpx ;
+}
+.logo{
+    border-radius: 50%;
+    border: 5rpx solid #ffffff;
+}
+.clubname{
+    color: #ffffff;
+    font-size: 32rpx;
+    margin-left: 25rpx;
+    position: relative;
+    bottom: 32rpx;
+}
+.textContainer{
+    position: relative;
+    bottom: 80rpx;
+    width: 85%;
+    line-height: 55rpx;
+    color: #333333;
+    font-size: 30rpx;
+
+}
+.qrSwiper{
+    height: 300rpx;
+    width: 100%;
+}
+.qrCodeContainer{
+    width: 85%;
+    background-color: #fafafd;
+}
+.qrCode{
+    width: 33%;
+}
+
+.btcontainer{
+    width: 100%;
+    margin-top: 50rpx;
+}
+button::after{
+    border: none;
+ }
+.loginbt{
+    width: 80%;
+    height: 100rpx;
+    border-radius: 10rpx;
+    font-size: 35rpx;
+    background-color: #ffd73b;
+    color: #333333;
+    text-align: center;
+    line-height: 100rpx;
+    border: none;
+}
+.bthover{
+    background-color: #E5C136;
+    
+}
+.btdisabled{
+    width: 80%;
+    height: 100rpx;
+    border-radius: 10rpx;
+    font-size: 35rpx;
+    background-color: #efefef;
+    color: #cccccc;
+    text-align: center;
+    line-height: 100rpx;
+    border: none;
+}
+/* 版权声明 */
+.copyright {
+    padding: 30rpx 0;
+    width: 100%;
+    text-align: center;
+}
+
+.copyright>view {
+    color: #dbdbdb;
+    font-size: 24rpx;
+}

@@ -1,0 +1,199 @@
+<!-- pages/administrator/club_manage/mamberInfo/mamber_info.wxml -->
+<!-- 搜索框 -->
+<navigator class="searchContainer" url="../searchclub/searchclub?type=info" hover-class="none" open-type="navigate">
+  <view class="searchInput">请输入社团名称</view>
+  <view class="searchicon">
+    <image src="/icons/sousuo-grey.png" />
+  </view>
+</navigator>
+<picker mode="date" fields="year" value="{{time}}" start="2000" end="2030" bindchange="bindTimeChange">
+  <view class="picker">
+    <!-- <image src="/icons/rili.png" /> -->
+    <text>{{time}}学年</text>
+    <image src="/icons/more-black.png" />
+  </view>
+</picker>
+<van-tabs active="{{ active }}" color="#ffd73b" bind:change="onChange" swipeable ellipsis="{{false}}">
+  <van-tab title="思想政治类">
+    <view class="checkContainer">
+      <scroll-view class="scrollview" scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore">
+        <navigator url="../clubinfo/clubinfo?clubid={{item.clubID}}" hover-class="none" wx:for="{{clubs.politics}}" wx:key="politics">
+          <view class="checkitem">
+            <view class="title">
+              <view class="clubname">
+                <text >{{item.name}}</text>
+                <view class="logout" wx:if="{{item.deprecated}}">已注销</view>
+              </view>
+              <image src="/icons/more-black-right.png" />
+            </view>
+            <view class="info">指导老师：{{item.teacher}}</view>
+            <view class="info">
+              <text>指导单位：{{item.guide}}</text>
+              <text>{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{getClubs&&clubs.politics.length==0}}">
+          <image src="/img/nodata.png" mode="widthFix" />
+          <view class="nodatatip">暂无数据</view>
+        </view>
+      </scroll-view>
+    </view>
+  </van-tab>
+  <van-tab title="学术科技类">
+    <view class="checkContainer">
+      <scroll-view class="scrollview" scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore">
+        <navigator url="../clubinfo/clubinfo?clubid={{item.clubID}}" hover-class="none" wx:for="{{clubs.technology}}" wx:key="technology">
+          <view class="checkitem">
+            <view class="title">
+              <view class="clubname">
+                <text >{{item.name}}</text>
+                <view class="logout" wx:if="{{item.deprecated}}">已注销</view>
+              </view>
+              <image src="/icons/more-black-right.png" />
+            </view>
+            <view class="info">指导老师：{{item.teacher}}</view>
+            <view class="info">
+              <text>指导单位：{{item.guide}}</text>
+              <text>{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{getClubs&&clubs.technology.length==0}}">
+          <image src="/img/nodata.png" mode="widthFix" />
+          <view class="nodatatip">暂无数据</view>
+        </view>
+      </scroll-view>
+    </view>
+  </van-tab>
+  <van-tab title="创新创业类">
+    <view class="checkContainer">
+      <scroll-view class="scrollview" scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore">
+        <navigator url="../clubinfo/clubinfo?clubid={{item.clubID}}" hover-class="none" wx:for="{{clubs.business}}" wx:key="business">
+          <view class="checkitem">
+            <view class="title">
+              <view class="clubname">
+                <text >{{item.name}}</text>
+                <view class="logout" wx:if="{{item.deprecated}}">已注销</view>
+              </view>
+              <image src="/icons/more-black-right.png" />
+            </view>
+            <view class="info">指导老师：{{item.teacher}}</view>
+            <view class="info">
+              <text>指导单位：{{item.guide}}</text>
+              <text>{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{getClubs&&clubs.business.length==0}}">
+          <image src="/img/nodata.png" mode="widthFix" />
+          <view class="nodatatip">暂无数据</view>
+        </view>
+      </scroll-view>
+    </view>
+  </van-tab>
+  <van-tab title="文化体育类">
+    <view class="checkContainer">
+      <scroll-view class="scrollview" scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore">
+        <navigator url="../clubinfo/clubinfo?clubid={{item.clubID}}" hover-class="none" wx:for="{{clubs.culture}}" wx:key="culture">
+          <view class="checkitem">
+            <view class="title">
+              <view class="clubname">
+                <text >{{item.name}}</text>
+                <view class="logout" wx:if="{{item.deprecated}}">已注销</view>
+              </view>
+              <image src="/icons/more-black-right.png" />
+            </view>
+            <view class="info">指导老师：{{item.teacher}}</view>
+            <view class="info">
+              <text>指导单位：{{item.guide}}</text>
+              <text>{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{getClubs&&clubs.culture.length==0}}">
+          <image src="/img/nodata.png" mode="widthFix" />
+          <view class="nodatatip">暂无数据</view>
+        </view>
+      </scroll-view>
+    </view>
+  </van-tab>
+  <van-tab title="志愿公益类">
+    <view class="checkContainer">
+      <scroll-view class="scrollview" scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore">
+        <navigator url="../clubinfo/clubinfo?clubid={{item.clubID}}" hover-class="none" wx:for="{{clubs.volunteer}}" wx:key="volunteer">
+          <view class="checkitem">
+            <view class="title">
+              <view class="clubname">
+                <text >{{item.name}}</text>
+                <view class="logout" wx:if="{{item.deprecated}}">已注销</view>
+              </view>
+              <image src="/icons/more-black-right.png" />
+            </view>
+            <view class="info">指导老师：{{item.teacher}}</view>
+            <view class="info">
+              <text>指导单位：{{item.guide}}</text>
+              <text>{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{getClubs&&clubs.volunteer.length==0}}">
+          <image src="/img/nodata.png" mode="widthFix" />
+          <view class="nodatatip">暂无数据</view>
+        </view>
+      </scroll-view>
+    </view>
+  </van-tab>
+  <van-tab title="自律互助类">
+    <view class="checkContainer">
+      <scroll-view class="scrollview" scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore">
+        <navigator url="../clubinfo/clubinfo?clubid={{item.clubID}}" hover-class="none" wx:for="{{clubs.assistance}}" wx:key="assistance">
+          <view class="checkitem">
+            <view class="title">
+              <view class="clubname">
+                <text >{{item.name}}</text>
+                <view class="logout" wx:if="{{item.deprecated}}">已注销</view>
+              </view>
+              <image src="/icons/more-black-right.png" />
+            </view>
+            <view class="info">指导老师：{{item.teacher}}</view>
+            <view class="info">
+              <text>指导单位：{{item.guide}}</text>
+              <text>{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{getClubs&&clubs.assistance.length==0}}">
+          <image src="/img/nodata.png" mode="widthFix" />
+          <view class="nodatatip">暂无数据</view>
+        </view>
+      </scroll-view>
+    </view>
+  </van-tab>
+  <van-tab title="其他">
+    <view class="checkContainer">
+      <scroll-view class="scrollview" scroll-y style="height: {{scrollHeight+'px'}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore">
+        <navigator url="../clubinfo/clubinfo?clubid={{item.clubID}}" hover-class="none" wx:for="{{clubs.other}}" wx:key="other">
+          <view class="checkitem">
+            <view class="title">
+              <view class="clubname">
+                <text >{{item.name}}</text>
+                <view class="logout" wx:if="{{item.deprecated}}">已注销</view>
+              </view>
+              <image src="/icons/more-black-right.png" />
+            </view>
+            <view class="info">指导老师：{{item.teacher}}</view>
+            <view class="info">
+              <text>指导单位：{{item.guide}}</text>
+              <text>{{item.people}}人</text>
+            </view>
+          </view>
+        </navigator>
+        <view class="nodataContainer" wx:if="{{getClubs&&clubs.other.length==0}}">
+          <image src="/img/nodata.png" mode="widthFix" />
+          <view class="nodatatip">暂无数据</view>
+        </view>
+      </scroll-view>
+    </view>
+  </van-tab>
+</van-tabs>

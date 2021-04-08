@@ -1,0 +1,32 @@
+<!--pages/emailset/emailset.wxml-->
+<view class="page">
+    <view class="emailContainer">
+        <view class="title">原邮箱</view>
+        <view class="eamil">{{originEamil}}</view>
+    </view>
+    <form catchsubmit="formSubmit">
+    <view class="inputContainer">
+        <input placeholder="请输入密码" placeholder-style="color:#ccc;" placeholder-class="title" password="{{!passwordRead}}" placeholder-class="placeholder" name='password' value="{{password}}" bind:input="input" data-type="password"/>
+        <view class="imgbox">
+                <image src="{{passwordRead?'/icons/yanjing.png':'/icons/eye-close.png'}}" mode="widthFix" bind:tap="passwordRead"/>
+        </view>
+
+    </view>
+    <view class="inputContainer">
+        <input placeholder="请输入新邮箱" placeholder-style="color:#ccc;" placeholder-class="title" placeholder-class="placeholder" name='email' value="{{email}}" bind:input="input" data-type="email"/>
+        <!-- <button class="sendbt" bind:tap="send" hover-class="bthover" disabled="{{sendDisabled}}">{{title}}</button> -->
+    </view>
+    <view class="inputContainer">
+        <input placeholder="邮箱验证码" placeholder-style="color:#ccc;" placeholder-class="title" placeholder-class="placeholder" name='verifyCode' value="{{verifyCode}}" bind:input="input" data-type="verifyCode"/>
+    <button class="sendbt" bind:tap="send" hover-class="bthover" disabled="{{sendDisabled}}">{{title}}</button>
+    </view>
+    <view class="btcontainer">
+        <button hover-class="bthover" form-type="submit" class="{{btdisabled?'btdisabled':'loginbt'}}"  disabled="{{btdisabled}}">
+                提交
+        </button>
+    </view>
+    </form>
+    <view class="copyright">
+    <view>Copyright©2021 All rights reserved by Quanta Center</view>
+</view>
+</view>

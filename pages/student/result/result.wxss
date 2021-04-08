@@ -1,0 +1,54 @@
+/* pages/student/result/result.wxss */
+.itemContainer{
+    width: 80%;
+    padding: 20rpx 40rpx;
+    box-shadow:1px 1px 5px 1px rgba(159,188,217,0.22);
+    margin: 20rpx auto;
+    border-radius: 10rpx;
+}
+.titleContainer{
+    display: flex;
+    align-items: center;
+}
+.clubName{
+    margin-left: 20rpx;
+    color: #333333;
+    width: 100%;
+}
+
+.name{
+    font-size: 30rpx;
+    color: #333333;
+}
+.department{
+    font-size: 28rpx;
+    color: #333333;
+    display: flex;
+    justify-content: space-between;
+}
+.roundContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.round{
+    color: #dddddd;
+    font-size: 26rpx;
+}
+.Line{
+    background: #dddddd;
+    width: 35%;
+    height: 1px;
+   }
+.textContain view{
+    word-break: keep-all;
+    word-wrap: break-word;
+    white-space: pre-line;
+    font-size: 30rpx;
+    color: #333333;
+}
+.textContain text{
+    font-size: 30rpx;
+    color: #333333;
+}

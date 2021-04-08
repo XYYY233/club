@@ -1,0 +1,30 @@
+<!--pages/forget/forget.wxml-->
+<view class="container">
+    <view class="title">忘记密码</view>
+    <form catchsubmit="formSubmit">
+        <view class="inputContainer">
+            <input placeholder="账号" placeholder-class="placeholder" name='username' value="{{username}}" bind:input="input" data-type="username"/>
+            <view class="imgbox">
+                <image wx:if="{{userinput.username}}" src="/icons/delete-black.png" mode="widthFix" bind:tap="delete"/>
+            </view>
+        </view>
+        <view class="inputContainer">
+            <input placeholder="邮箱验证码" type="number" placeholder-class="placeholder" name='verifyCode' value="{{verifyCode}}" bind:input="input"  data-type="verifyCode"/>
+            <button class="sendbt" bind:tap="send" hover-class="bthover" disabled="{{sendDisabled}}">{{title}}</button>
+        </view>
+        <view class="inputContainer">
+            <input placeholder="新密码" password placeholder-class="placeholder" name='newPass' value="{{newPass}}" bind:input="input"  data-type="newPass"/>
+        </view>
+        <view class="inputContainer">
+            <input placeholder="再次输入" password placeholder-class="placeholder" name='passwordconfirm' value="{{passwordconfirm}}" bind:input="input"  data-type="passwordconfirm"/>
+        </view>
+        <view class="btcontainer">
+            <button hover-class="bthover" form-type="submit" class="{{btdisabled?'btdisabled':'loginbt'}}"  disabled="{{btdisabled}}">
+                提交
+            </button>
+        </view>
+    </form>
+</view>
+<view class="copyright">
+    <view>Copyright©2021 All rights reserved by Quanta Center</view>
+</view>

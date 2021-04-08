@@ -1,0 +1,28 @@
+<!--pages/stuLogin/studentLogin.wxml-->
+<view class="container">
+    <view class="title">学生登录</view>
+    <form catchsubmit="formSubmit"> 
+        <view class="inputContainer">
+            <input placeholder="学号" type="number" placeholder-class="placeholder" name='username' value="{{user.username}}" bind:input="input" data-type="username"/>
+            <view class="imgbox">
+                <image wx:if="{{userinput.username}}" src="/icons/delete-black.png" mode="widthFix" bind:tap="delete"/>
+            </view>
+        </view>
+        <view class="inputContainer">
+            <input placeholder="密码" password placeholder-class="placeholder" name='password' value="{{user.password}}" password="{{!passwordRead}}" bind:input="input" data-type="password"/>
+        <view class="eye">
+                <image src="{{passwordRead?'/icons/yanjing.png':'/icons/eye-close.png'}}" mode="widthFix" bind:tap="passwordRead"/>
+        </view>
+        </view>
+        <view class="btcontainer">
+            <button form-type="submit" class="{{btdisabled?'btdisabled':'loginbt'}}"  disabled="{{btdisabled}}">
+                登录
+            </button>
+            
+        </view>
+        <view class="forget" bind:tap="toforget">忘记密码？</view>
+    </form>
+</view>
+<view class="copyright">
+    <view>Copyright©2021 All rights reserved by Quanta Center</view>
+</view>

@@ -1,0 +1,35 @@
+<!--pages/administrator/club/club/club.wxml-->
+
+<activities wx:if="{{active==0}}"></activities>
+<myclub wx:if="{{active==1}}"></myclub>
+
+<van-tabbar active-color="#333333" inactive-color="#333333" active="{{ active }}" bind:change="onChange" placeholder safe-area-inset-bottom border="false">
+  <van-tabbar-item >
+  <image
+      slot="icon"
+      src="/icons/zonglan.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 50rpx;"
+    />
+    <image
+      slot="icon-active"
+      src="/icons/zonglan-yellow.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 50rpx;"
+    />
+  活动总览
+  </van-tabbar-item>
+  <van-tabbar-item >
+    <image
+      slot="icon"
+      src="/icons/shetuan.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 50rpx;"
+    />
+    <image
+      slot="icon-active"
+      src="/icons/shetuan-yellow.png"
+      mode="aspectFit"
+      style="width: 40rpx; height: 50rpx;"
+    />我的社团</van-tabbar-item>
+</van-tabbar>

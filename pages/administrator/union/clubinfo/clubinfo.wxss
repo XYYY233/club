@@ -1,0 +1,111 @@
+/* pages/administrator/union/clubinfo/clubinfo.wxss */
+.page{
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 30rpx;
+}
+.title{ 
+    font-size: 34rpx;
+    padding: 10rpx 0;
+    margin: 10rpx 0;
+}
+
+.formContainer{
+    width: 100%;
+    position: relative;
+    bottom: 30rpx;
+    margin: 0 auto;
+}
+.itemtitle{
+    color: #cccccc;
+    font-size: 34rpx;
+    margin: 10rpx 0;
+    width: 100%;
+}
+.itemContainer{
+    margin: 20rpx 0;
+}
+.itemtext{
+    background-color: #fafafd;
+    border: 1rpx solid #cccccc;
+    border-radius: 10rpx;
+    min-height:55rpx;
+    padding: 20rpx 20rpx;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+}
+.text{
+    width: 100%;
+    font-size: 32rpx;
+    color: #333333;
+}
+.teacherContaier{
+    margin-top: 10rpx;
+}
+
+/* 会员信息 */
+.titleContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.picker{
+    padding: 0 30rpx;
+    margin: 5rpx auto;
+    display: flex;
+    align-items: center;
+}
+.picker image{
+    width: 43rpx;
+    height: 43rpx;
+}
+.picker text{
+    margin-left: 30rpx;
+    font-size: 32rpx;
+}
+
+/* 手风琴 */
+.collapse{ 
+    width: 100%;
+    margin: 10rpx auto;
+
+}
+.collapse-item{
+    margin: 25rpx 0;
+    box-shadow:1px 1px 5px 1px rgba(159,188,217,0.22);
+    border-radius: 15rpx;
+}
+.collapse-item view{
+    font-size: 32rpx;
+}
+.infoitem{
+    font-size: 30rpx !important;
+    display: flex;
+    color: #cccccc;
+    margin: 10rpx;
+}
+.infoitem .contnet{
+    color: #333333;
+    margin-left: 30rpx;
+}
+.membertitle{
+    width: 30%;
+}
+.contnet{
+    width: 70%;
+    word-break:break-all;
+}
+/* 版权声明 */
+.copyright{
+    padding: 30rpx 0;
+    width: 100%;
+    text-align: center;
+}
+  .copyright>view{
+    color: #dbdbdb;
+    font-size: 24rpx;
+  }
+  
+  

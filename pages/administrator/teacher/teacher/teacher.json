@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "activity_check":"/pages/administrator/teacher/activities/activities",
+    "mine":"/pages/administrator/teacher/mine/mine",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
+  }
+}

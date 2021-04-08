@@ -1,0 +1,25 @@
+<!-- pages/student/index/index.wxml -->
+<view class="page">
+    <!-- 搜索框 -->
+    <navigator class="searchContainer" url="../searchclub/searchclub" hover-class="none" open-type="navigate">
+        <view class="searchInput">请输入社团名称</view>
+        <view class="searchicon">
+            <image src="/icons/sousuo-grey.png" />
+        </view>
+    </navigator>
+    <view class="clubContainer" wx:for="{{clubs}}" wx:key="clubs">
+        <view class="img" style="background-color:{{item.color}};padding-top: {{item.name=='文化体育类'?'0':'30rpx'}}" >
+            <image src="/img/{{item.category}}.png" mode="heightFix" lazy-load="false"style="height: {{item.name=='文化体育类'?'250rpx':'220rpx'}}"/>
+            <view class="arrow"></view>
+        </view>
+        <view class="titleContainer">
+            <view>
+                <view class="title">{{item.name}}</view>
+            </view>
+            <navigator hover-class="none" class="bt" url="../clublist/clublist?club={{item.name}}&category={{item.category}}">了解更多</navigator>
+        </view>
+    </view>
+    <view class="copyright">
+        <view>Copyright©2021 All rights reserved by Quanta Center</view>
+    </view>
+</view>
