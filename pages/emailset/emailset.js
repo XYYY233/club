@@ -88,7 +88,7 @@ Page({
     });
     let count = this.data.count;
     // 当count不为0开始倒计时，当count为0就关闭倒计时
-    let model = /^([a-zA-Z\d])(\w|\-)+@[a-zA-Z\d]+\.[a-zA-Z]{2,4}$/;
+    let model = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
     if (model.test(this.data.email)) { //验证邮箱
       try {
         const res = await fetch({
@@ -136,7 +136,7 @@ Page({
     } else {
       wx.showToast({
         title: '请输入正确邮箱',
-        icon: 'erroe',
+        icon: 'error',
       });
     }
 

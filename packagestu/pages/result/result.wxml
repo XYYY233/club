@@ -14,10 +14,10 @@
             <view class="Line"></view>
         </view>
         <view class="textContain">
-            <view>
+            <view class="textContain2">
                 <text user-select="true" class="text">{{content}}</text>
-            </view>
-            <view>
+            </view> 
+            <view class="textContain2">
                 <text user-select="true" class="text">{{personal}}</text>
             </view>
         </view>

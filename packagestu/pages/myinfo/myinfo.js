@@ -177,7 +177,7 @@ Page({
       })
       return 
     }
-    var phone=/^[1][3,4,5,7,8][0-9]{9}$/;
+    var phone=/^[1][1,2,3,4,5,6,7,8,9][0-9]{9}$/;
     if (!phone.test(e.detail.value.phone)) {
       wx.showToast({
         title: '请检查手机号码',

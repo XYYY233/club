@@ -7,8 +7,7 @@
           <view class="listitem">
             <view class="titleContainer">
               <image src="/icons/chengyuan1.png" class="icons"/>
-              <!-- <view class="title">{{item.club}}</view> -->
-              <view class="title">击剑社</view>
+              <view class="title">{{item.club}}</view>
 
               
             </view>
@@ -39,8 +38,7 @@
         <view class="listitem">
           <view class="titleContainer">
               <image src="/icons/chengyuan1.png" class="icons"/>
-              <!-- <view class="title">{{item.club}}</view> -->
-              <view class="title">击剑社</view>
+              <view class="title">{{item.club}}</view>
             </view>
             <view class="titleContainer">
               <image src="/icons/zonglan.png" class="titleicons"/>
@@ -68,8 +66,7 @@
         <view class="listitem">
           <view class="titleContainer">
               <image src="/icons/chengyuan1.png" class="icons"/>
-              <!-- <view class="title">{{item.club}}</view> -->
-              <view class="title">击剑社</view>
+              <view class="title">{{item.club}}</view>
             </view>
             <view class="titleContainer">
               <image src="/icons/zonglan.png" class="titleicons"/>

@@ -13,12 +13,13 @@
             <view class="logo">
                 <van-image round fit="cover" width="140rpx" height="140rpx" src="{{logo}}" />
             </view>
-            <text class="clubname">{{name}}</text>
+            <text class="clubname {{swiperImg.length==0?'blackword':''}}">{{name}}</text>
         </view>
         <view class="textContainer">
+            <text user-select="true">
             <!-- <text class="" selectable="false" space="false" decode="false"> -->
             {{intro}}
-            <!-- </text> -->
+            </text>
         </view>
         <view class="qrCodeContainer" wx:if="{{qrCodes.length!=0}}">
             <swiper indicator-dots class="qrSwiper">

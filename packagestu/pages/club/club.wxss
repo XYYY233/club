@@ -108,3 +108,6 @@ button::after{
     color: #dbdbdb;
     font-size: 24rpx;
 }
+.blackword{
+    color: #333333;
+}

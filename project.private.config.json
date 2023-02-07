@@ -1,53 +1,5 @@
 {
-  "description": "项目配置文件",
-  "packOptions": {
-    "ignore": []
-  },
-  "setting": {
-    "urlCheck": false,
-    "es6": true,
-    "enhance": true,
-    "postcss": true,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "newFeature": false,
-    "coverView": true,
-    "nodeModules": false,
-    "autoAudits": true,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
-    "uglifyFileName": false,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "enableEngineNative": false,
-    "useIsolateContext": true,
-    "userConfirmedBundleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "showES6CompileOption": false
-  },
-  "compileType": "miniprogram",
-  "libVersion": "2.16.0",
-  "appid": "wx143b8a4a857bb3c5",
-  "projectname": "%E9%9D%A2%E8%AF%95%E7%B3%BB%E7%BB%9F",
-  "debugOptions": {
-    "hidedInDevtools": []
-  },
-  "scripts": {},
-  "isGameTourist": false,
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -193,8 +145,8 @@
           "scene": null
         },
         {
-          "name": "学生端",
-          "pathName": "pages/student/student/student",
+          "name": "packagestu/pages/student/student",
+          "pathName": "packagestu/pages/student/student",
           "query": "",
           "scene": null
         },
@@ -225,6 +177,19 @@
         {
           "name": "学生端-面试结果",
           "pathName": "pages/student/result/result",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packagestu/pages/mine/mine",
+          "pathName": "packagestu/pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packagestu/pages/student/student",
+          "pathName": "packagestu/pages/student/student",
+          "query": "",
           "scene": null
         }
       ]

@@ -12,7 +12,7 @@ Page({
     logo: '',
     club: '',
     department: '',
-    current: 1, //当前面试结果的面数
+    // current: 1, //当前面试结果的面数
     content: '', //统一公告
     personal: '' //个性化公告
   },
@@ -44,8 +44,8 @@ Page({
     }
   },
   setRoundTitle(round){
-    let stepsList = ['一面', '二面', '三面', '四面', '五面', '六面', '七面', '八面', '九面', '十面', '十一面', '十二面', '十三面']
-    this.setData({round:stepsList[parseInt(round)]})
+    let stepsList = ['一面','一面', '二面', '三面', '四面', '五面', '六面', '七面', '八面', '九面', '十面', '十一面', '十二面', '十三面']
+    this.setData({round:stepsList[parseInt(round)-1]})
   },
   /**
    * 生命周期函数--监听页面加载

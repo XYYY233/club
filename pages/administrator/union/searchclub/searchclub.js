@@ -36,7 +36,7 @@ Page({
           nodata:false
         })
       }else{
-      this.searchClubs(value)
+        this.searchClubs(value)
       };
     },1000);//1秒后
   },

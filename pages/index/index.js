@@ -10,6 +10,24 @@ Page({
   },
 
   onLoad: function () {
+    if(wx.getStorageSync('token')){
+      console.log("有token")
+      let role = wx.getStorageSync('role');
+      console.log(role)
+      //student,club,union,teacher,guide
+      if(role=="student"){
+        wx.reLaunch({
+          url: `/pages/student/student/student`
+        })
+      }else{
+        wx.reLaunch({
+          url: `/pages/administrator/${role}/${role}/${role}`
+        })
+      }
+    }else{
+      console.log("无token")
+      console.log(wx.getStorageSync('token'))
+    }
   },
   onShow:function(){
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {

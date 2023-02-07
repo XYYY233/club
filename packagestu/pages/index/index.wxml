@@ -7,18 +7,18 @@
             <image src="/icons/sousuo-grey.png" />
         </view>
     </navigator>
-    <view class="clubContainer" wx:for="{{clubs}}" wx:key="clubs">
+    <navigator class="clubContainer" wx:for="{{clubs}}" wx:key="clubs" hover-class="none" url="../clublist/clublist?club={{item.name}}&category={{item.category}}">
         <view class="img" style="background-color:{{item.color}};padding-top: {{item.name=='文化体育类'?'0':'30rpx'}}" >
-            <image src="/img/{{item.category}}.png" mode="heightFix" lazy-load="false"style="height: {{item.name=='文化体育类'?'250rpx':'220rpx'}}"/>
+            <image src="../../img/{{item.category}}.png" mode="heightFix" lazy-load="false"style="height: {{item.name=='文化体育类'?'250rpx':'220rpx'}}"/>
             <view class="arrow"></view>
         </view>
         <view class="titleContainer">
             <view>
                 <view class="title">{{item.name}}</view>
             </view>
-            <navigator hover-class="none" class="bt" url="../clublist/clublist?club={{item.name}}&category={{item.category}}">了解更多</navigator>
+            <navigator class="bt" >了解更多</navigator>
         </view>
-    </view>
+    </navigator>
     <view class="copyright">
         <view>Copyright©2021 All rights reserved by Quanta Center</view>
     </view>

@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "index":"/pages/student/index/index",
-    "mine":"/pages/student/mine/mine",
-    "van-tabbar": "@vant/weapp/tabbar/index",
-  "van-tabbar-item": "@vant/weapp/tabbar-item/index"
-  }
-}

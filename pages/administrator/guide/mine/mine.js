@@ -15,22 +15,9 @@ Component({
    * 组件的初始数据
    */
   data: {
-    name:"xxx指导单位",
+    name:"",
     clubs:[
-      {
-        name:"足球队",
-        student:"李四",
-        college:"信息学院",
-        classes:"计算机1902",
-        phone:"189888000"
-      },
-      {
-        name:"蓝球队",
-        student:"王六",
-        college:"信息学院",
-        classes:"计算机1902",
-        phone:"1387777000"
-      }
+      
     ]
   },
 

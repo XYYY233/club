@@ -28,6 +28,8 @@ function fetch(options){
               content: res.data.message,
               showCancel:false,
               success (res) {
+                //过期token
+                wx.clearStorage();
                 if (res.confirm) {
                   wx.reLaunch({
                     url: '/pages/index/index',

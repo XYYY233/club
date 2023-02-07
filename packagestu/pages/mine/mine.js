@@ -158,6 +158,7 @@ Component({
                 title: res.message,
                 icon: 'success'
               })
+              this.getChooseList()
               wx.hideLoading();
             } catch (err) {
               wx.hideLoading();
@@ -165,7 +166,12 @@ Component({
                 title: '提示',
                 content: err.message,
               })
-              console.log(err)
+              console.log(err);
+              let item = `chooseList[${index}].join`
+              let join = e.detail.value == '1' ? 2 : 1
+              that.setData({
+                [item]: join
+              })
             }
           } else if (res.cancel) {
             // 点击取消返回

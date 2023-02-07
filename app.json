@@ -2,8 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/forget/forget",
-    "pages/student/student/student",
-    "pages/student/clublist/clublist",
     "pages/administrator/union/union/union",
     "pages/administrator/union/clubinfo/clubinfo",
     "pages/studentLogin/studentLogin",
@@ -22,12 +20,7 @@
     "pages/emailset/emailset",
     "pages/passwordset/passwordset",
     "pages/usinghelp/usinghelp",
-    "pages/feedback/feedback",
-    "pages/student/club/club",
-    "pages/student/searchclub/searchclub",
-    "pages/student/myinfo/myinfo",
-    "pages/student/signup/signup",
-    "pages/student/result/result"
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -38,5 +31,22 @@
   "sitemapLocation": "sitemap.json",
   "networkTimeout": {
     "request": 10000
+  },
+  "subPackages": [
+    {
+      "root": "packagestu",
+      "name":"分包学生端",
+      "pages": [
+        "pages/club/club",
+        "pages/searchclub/searchclub",
+        "pages/myinfo/myinfo",
+        "pages/signup/signup",
+        "pages/result/result",
+        "pages/student/student",
+        "pages/clublist/clublist",
+        "pages/mine/mine",
+        "pages/index/index"
+      ]
     }
+  ]
 }

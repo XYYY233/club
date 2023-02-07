@@ -211,6 +211,7 @@ Component({
                 title: '',
                 content: err.message,
               })
+              wx.hideLoading();
               that.setData({
                 recruit: !value
               })
