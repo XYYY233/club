@@ -9,4 +9,4 @@
 ![会员-设置-简历信息-只读@2x](https://user-images.githubusercontent.com/61486672/218046514-565fb1b1-61a6-47f9-85e1-f9beb0d2ff50.png)
 ![会员-首页@2x](https://user-images.githubusercontent.com/61486672/218046703-f77e712d-8e55-45b9-a77f-24ab9b9216da.png)
 
-<img src="https://user-images.githubusercontent.com/61486672/218046703-f77e712d-8e55-45b9-a77f-24ab9b9216da.png" alt="图片替换文本" width="300" height="313"  />
+<img src="https://user-images.githubusercontent.com/61486672/218046703-f77e712d-8e55-45b9-a77f-24ab9b9216da.png" alt="图片替换文本" width="400" height="800"  />
